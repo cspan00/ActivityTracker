@@ -24,6 +24,10 @@ app.config(function ($routeProvider, $authProvider, $locationProvider) {
    templateUrl: 'partials/post.html',
    controller: 'postController'
  })
+ .when('/admin', {
+   templateUrl: 'partials/admin.html',
+   controller: 'postController'
+ })
  $locationProvider.html5Mode(true);
 
 });
