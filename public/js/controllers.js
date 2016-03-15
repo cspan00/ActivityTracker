@@ -32,10 +32,13 @@ app.controller('mainController', function($scope, $location, $auth) {
  });
 
 app.controller("postController", function($scope, $http, userService){
+  $scope.isAdmin = false;
   $scope.userData = userService.all().then(function(response) {
-      $scope.userData = response;
-      console.log($scope.userData[0]['is_admin']);
-})
-
-
+    $scope.userData = response;
+    if($scope.userData[0]['is_admin'] === false){
+      $scope.isAdmin = false;
+    } else {
+      $scope.isAdmin = true;
+    };
+  })
 });
