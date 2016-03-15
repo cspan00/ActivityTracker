@@ -31,6 +31,11 @@ app.controller('mainController', function($scope, $location, $auth) {
    };
  });
 
-app.controller("postController", function($scope, $http){
-  console.log('working')
+app.controller("postController", function($scope, $http, userService){
+  $scope.userData = userService.all().then(function(response) {
+      $scope.userData = response;
+      console.log($scope.userData[0]['is_admin']);
+})
+
+
 });
