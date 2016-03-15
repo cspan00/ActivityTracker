@@ -1,3 +1,12 @@
-<div ng-repeat='user in userData'>
-  <p style='color:white'>{{user.first_name}}</p>
-</div>
+<table class='table table-bordered' style='margin-top:90px'>
+  <thead>
+    <th style='color:white'>Name</th>
+    <th style='color:white'>Email</th>
+  </thead>
+  <tbody ng-repeat='user in userData'>
+    <tr>
+      <td style='color:white'>{{user.name}}</td>
+      <td style='color:white'>{{user.email}}</td>
+    </tr>
+  </tbody>
+</table>
