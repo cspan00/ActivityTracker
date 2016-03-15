@@ -46,7 +46,7 @@ router.post('/auth/facebook', function(req,res){
           user.first_name = profile.first_name
           user.last_name = profile.last_name
           user.name = profile.name;
-          user.is_admin = true;
+          user.is_admin = false;
           console.log("**********");
           console.log(user);
           var token = createToken(user)
@@ -62,7 +62,7 @@ router.post('/auth/facebook', function(req,res){
     });
 })
 
-router.get('/post', function(req, res, next){
+router.get('/users', function(req, res, next){
   Users().select().then(function(response){
     console.log('******RESPONSE********');
     console.log(response);
