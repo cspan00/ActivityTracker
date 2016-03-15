@@ -64,8 +64,6 @@ router.post('/auth/facebook', function(req,res){
 
 router.get('/users', function(req, res, next){
   Users().select().then(function(response){
-    console.log('******RESPONSE********');
-    console.log(response);
     res.send(response)
   })
 })

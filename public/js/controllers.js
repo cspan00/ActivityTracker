@@ -33,14 +33,8 @@ app.controller('mainController', function($scope, $location, $auth) {
 
 app.controller("postController", function($scope, $http, userService){
   $scope.userData;
-  $scope.isAdmin = false;
   userService.all().then(function(response) {
     $scope.userData = response;
-    console.log($scope.userData);
-    if($scope.userData[0]['is_admin'] === false){
-      $scope.isAdmin = false;
-    } else {
-      $scope.isAdmin = true;
-    };
+    $scope.userData[0]['is_admin'] ? $scope.isAdmin = true : false;
   })
 });
