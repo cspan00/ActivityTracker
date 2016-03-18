@@ -11,6 +11,7 @@ exports.up = function(knex, Promise) {
    t.string('lng');
    t.string('child_name');
    t.text('picture_url');
+   t.text('public_id');
    t.text('description');
    t.integer('hours');
    t.timestamps();
