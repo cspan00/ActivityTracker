@@ -4,4 +4,21 @@ app.controller("editController", function($scope, $http, $auth, posts, $location
     $scope.postInfo = response;
     console.log($scope.postInfo);
   })
+
+  $scope.hoursPlus = function(){
+    if ($scope.postInfo.hours == 8){
+
+    }
+    else{
+      $scope.postInfo.hours+= .5
+    }
+  }
+  $scope.hoursMinus = function(){
+    if ($scope.postInfo.hours == .5){
+
+    }
+    else{
+      $scope.postInfo.hours-= .5
+    }
+  }
 })

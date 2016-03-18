@@ -1,0 +1,23 @@
+<div class='container adminDiv'>
+  <div class='row'>
+    <div class='textPostDiv col-md-12 col-xs-12 col-s-12'>
+      <h3>Scoreboard:</h3>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-md-12 col-xs-12 col-s-12'>
+      <table>
+        <thead>
+          <th>Name</th>
+          <th class='textPostDiv'>Points</th>
+        </thead>
+        <tbody>
+          <tr ng-repeat='user in userStats | orderBy : user.total_hours'>
+            <td>{{user.name}}</td>
+            <td class='textPostDiv'>{{user.total_hours}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

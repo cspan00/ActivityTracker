@@ -79,6 +79,10 @@ app.config(function ($routeProvider, $authProvider, $locationProvider) {
   templateUrl: 'partials/admin.html',
   controller: 'postController'
 })
+.when('/scoreboard', {
+  templateUrl: 'partials/scoreboard.html',
+  controller: 'postController'
+})
 
 
  $locationProvider.html5Mode(true);
