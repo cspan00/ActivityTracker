@@ -49,7 +49,6 @@ this.editPost = function (post_id) {
   })
   }
 
-  
 
 })
 

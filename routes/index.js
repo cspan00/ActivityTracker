@@ -86,7 +86,6 @@ router.post('/user', function(req, res){
   var user = verifyToken(token)
   Users().where('facebook_id', user.facebook_id).first().then(function(result){
     res.send(result)
-    console.log(result);
   })
 
 })
@@ -100,7 +99,6 @@ router.get('/user/:id', function(req, res, next){
 //Adding posts
 router.post('/new/post', upload.single('file'), function(req, res, next){
 cloudinary.uploader.upload(req.file.filename, function(result) {
-console.log(result);
 var post ={}
 post.facebook_id = req.body.facebook_id
 post.author = req.body.author
@@ -121,7 +119,6 @@ Users().where('facebook_id', req.body.facebook_id).first().then(function(result)
   var hours = req.body.hours;
   var new_hours = parseFloat(old_hours) + parseFloat(hours);
   Users().where('facebook_id', result.facebook_id).update('total_hours', new_hours).then(function(result){
-    console.log("hours updated");
   })
 })
 Posts().insert(post).then(function(result){
@@ -161,10 +158,10 @@ router.get('/post/:id', function(req, res, next){
     })
 })
 
-
-// Posts().where('id', req.params.id).then(function(response){
-//   console.log('THIS IS THE POST WE WANT');
-//   console.log(response);
-// })
+router.post('/post/:id/delete', function (req, res, next) {
+  Posts().where('id', req.params.id).first().del().then(function (response) {
+    res.redirect('/#/posts')
+  })
+})
 
 module.exports = router;

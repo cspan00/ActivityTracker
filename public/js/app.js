@@ -80,6 +80,7 @@ app.config(function ($routeProvider, $authProvider, $locationProvider) {
   controller: 'postController'
 })
 
+
  $locationProvider.html5Mode(true);
 
 });
