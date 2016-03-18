@@ -18,7 +18,7 @@
   <div class='row'>
     <div class='pointCenter col-md-2 col-xs-12 col-s-12'>
         <div class='pointVert'>
-          <h2>{{post.hours}}</h2>
+          <h2>{{post.time}}</h2>
           <p>points</p>
         </div>
       </div>
@@ -27,7 +27,7 @@
       </div>
       <div class='col-md-5 col-xs-12 col-s-12'>
         <p>{{post.description}}</p>
-        <button class='btn btn-primary btn-sm' ng-show="post.facebook_id == user"><a href="/posts/{{post.id}}/edit">Edit Post</a></button>
+        <button class='btn btn-primary btn-sm' ng-show="post.facebook_id == user || userAdmin == true"><a href="/posts/{{post.id}}/edit">Edit Post</a></button>
         <button type="submit" class='btn btn-danger btn-sm' ng-click="submitPost()">Delete Post</button>
       </div>
     </div>

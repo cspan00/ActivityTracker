@@ -1,4 +1,5 @@
 require('dotenv').load()
+var moment = require('moment')
 var express = require('express');
 var router = express.Router();
 var knex = require('../db/knex');
@@ -59,6 +60,7 @@ router.post('/auth/facebook', function(req,res){
           user.last_name = profile.last_name
           user.name = profile.name;
           user.total_hours = 0;
+          user.time = moment().calendar()
           var token = createToken(user)
           Users().insert(user)
             .catch(function(error){
@@ -98,6 +100,7 @@ router.get('/user/:id', function(req, res, next){
 //Adding posts
 router.post('/new/post', upload.single('file'), function(req, res, next){
 cloudinary.uploader.upload(req.file.filename, function(result) {
+console.log(result);
 var post ={}
 post.facebook_id = req.body.facebook_id
 post.author = req.body.author
@@ -109,13 +112,14 @@ post.description = req.body.description
 post.picture_url = result.secure_url
 post.public_id = result.public_id;
 post.hours = req.body.hours
+post.time = moment().calendar()
 
 //update total number of hours for user when they make a post
 //does math to calculate total hours for user.
 Users().where('facebook_id', req.body.facebook_id).first().then(function(result){
   var old_hours = result.total_hours;
   var hours = req.body.hours;
-  var new_hours = Number(old_hours) + Number(hours);
+  var new_hours = parseFloat(old_hours) + parseFloat(hours);
   Users().where('facebook_id', result.facebook_id).update('total_hours', new_hours).then(function(result){
     console.log("hours updated");
   })
@@ -140,9 +144,13 @@ router.get('/dsflksldkjf23423lkdjfvVVslkdjflslss', function(req, res){
   })
 })
 
-router.post('/post/edit', upload.single('file'), function (req, res, next) {
-  Posts().where("id", req.body.postId).del().then(function (response) {
-
+router.post('/post/edit', function (req, res, next) {
+  Posts().where("id", req.body.postId).update({
+    title: req.body.title,
+    address: req.body.location,
+    description: req.body.description
+  }).then(function (response) {
+    res.redirect('/#/posts')
   })
 
 })

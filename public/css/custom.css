@@ -8,8 +8,8 @@ body{
   position: absolute;
   left: 0;
   right: 0;
-  top: 0;
-  bottom: 0;
+  top: 9%;
+  bottom: 82%;
 }
 
 .slides-container{
@@ -210,13 +210,12 @@ body{
 
 .facebookButton{
   background-color: #4ea0c5;
-  height: 70px;
   border-radius: 10px;
-  width: 90%;
-  min-width: 240px;
+  width: 60%;
   margin: 0 auto;
   padding: 10px;
   transition-duration: .5s;
+  min-width: 170px;
 }
 
 .facebookButton:hover{
@@ -227,9 +226,8 @@ body{
 .facebookButton span{
   color: white;
   font-weight: 300;
-  margin-left: 10px;
   vertical-align: middle;
-  display: inline;
+  margin-top: 100px;
 }
 
 .facebookIcon{
@@ -438,6 +436,58 @@ hr{
   margin: 0;
 }
 
+.lefty{
+  text-align: left;
+  padding: 0;
+}
+
 .add{
   color: #f47721;
+}
+
+.signInSpan{
+  font-size: 2em;
+  margin-top: 10px;
+}
+
+.borderRight{
+  border-right: 1px solid #4ea0c5;
+}
+
+.stateSelect{
+  min-width: 60px;
+  /*width: 110%;*/
+}
+
+.titleInput{
+  width: 95%;
+  margin: 0 auto;
+}
+
+.addLi{
+  border: 3px solid white;
+  border-radius: 5px;
+  transition: .5s;
+}
+
+.addLi:hover{
+  border: 3px solid #f47721;
+  box-shadow: 3px 3px 8px rgba(0,0,0,.3);
+  color: #f47721;
+}
+
+.slider_btn{
+  border: 3px solid white;
+  border-radius: 5px;
+  transition: .5s;
+}
+
+.slider_btn:hover{
+  border: 3px solid #f47721;
+  color: white;
+  box-shadow: 3px 3px 8px rgba(0,0,0,.3);
+}
+
+.buttonA{
+  color: white;
 }

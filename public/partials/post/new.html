@@ -14,16 +14,26 @@
       <div class='textPostDiv col-md-5 col-xs-12 col-s-12'>
         <div class='row'>
           <div class='form-group textPostDiv col-md-12 col-xs-12 col-s-12'>
-            <label for="postTitle">Title</label>
+            <label for="postTitle">Name your Activity</label>
             <br>
-            <input class='form-control' type="text" name="title" ng-model="title">
+            <input class='form-control titleInput' type="text" name="title" ng-model="title">
           </div>
         </div>
         <div class='row'>
-          <div class='textPostDiv form-group col-md-12 col-xs-12 col-s-12'>
+          <div class='textPostDiv col-md-12 col-xs-12 col-s-12'>
             <label for="locationOfActivity">Location</label>
             <br>
-            <input class='form-control' type="text" name="location" ng-model="location">
+            <div class='row'>
+              <div class='col-md-8 form-group center-block lefty'>
+                <input class='form-control cityInput' type="text" name="location" placeholder="City" ng-model="location">
+              </div>
+              <div class='col-md-4 form-group center-block lefty'>
+                <select class="form-control stateSelect" name="">
+                  <option value="CO">CO</option>
+                  <option value="CA">CA</option>
+                </select>
+              </div>
+            </div>
           </div>
           </div>
           <div class='row'>

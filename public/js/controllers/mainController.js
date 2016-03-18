@@ -66,7 +66,7 @@ app.controller('mainController', function($scope, $rootScope, $location, $auth) 
      }
 
   })
-
-  console.log("Logged in: " + $scope.loggedIn);
+  console.log($scope);
+  console.log("Logged in: " + JSON.stringify($scope.user));
 
  });

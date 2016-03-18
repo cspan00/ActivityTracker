@@ -13,8 +13,10 @@ exports.up = function(knex, Promise) {
    t.text('picture_url');
    t.text('public_id');
    t.text('description');
-   t.integer('hours');
-   t.timestamps();
+   t.float('hours');
+   t.string('time');
+   t.timestamp('created_at').defaultTo(knex.fn.now());
+
  })
 };
 

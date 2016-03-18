@@ -5,7 +5,7 @@
    </div>
  </div>
  <div class='row newRow'>
-   <form method="POST" action="/post/edit" enctype="multipart/form-data">
+   <form method="POST" action="/post/edit">
      <div class='textPostDiv col-md-3 col-xs-12 col-s-12'>
        <h3>{{postInfo.author}}</h3>
        <img class='img-responsive center-block'>
@@ -14,7 +14,7 @@
        <div class='row'>
          <div class='form-group textPostDiv col-md-12 col-xs-12 col-s-12'>
            <label for="postTitle">Title</label>
-           <input class='form-control' type="text" name="postTitle" ng-model="postInfo.title">
+           <input class='form-control' type="text" name="title" ng-model="postInfo.title">
            <br>
          </div>
        </div>
@@ -22,16 +22,14 @@
          <div class='textPostDiv form-group col-md-12 col-xs-12 col-s-12'>
            <label for="locationOfActivity">Location</label>
            <br>
-           <input class='form-control' type="text" name="locationOfActivity" ng-model="postInfo.address">
+           <input class='form-control' type="text" name="location" ng-model="postInfo.address">
          </div>
          </div>
          <div class='row'>
            <div class='textPostDiv form-group col-md-12 col-xs-12 col-s-12'>
            <label for="hours">Hours of Activity</label>
            <br>
-           <span class="glyphicon glyphicon-chevron-up glyph" aria-hidden="true" ng-click="hoursPlus()"></span>
            <h2>{{postInfo.hours}}</h2>
-           <span class="glyphicon glyphicon-chevron-down glyph" aria-hidden="true" ng-click="hoursMinus()"></span>
          </div>
        </div>
        </div>
@@ -45,8 +43,7 @@
        </div>
        <div class='row'>
          <div class='textPostDiv col-md-12 col-xs-12 col-s-12'>
-           <h3>Photo Upload</h3>
-           <input type="file" name="file" value = "Browse...">
+           <img class='img-responsive activityPic center-block' src="{{postInfo.picture_url}}">
            <input type="hidden" name="postId" value="{{postInfo.id}}">
            <div class='row'>
              <div class='textPostDiv form-group col-md-12 col-xs-12 col-s-12 submitButtonDiv'>

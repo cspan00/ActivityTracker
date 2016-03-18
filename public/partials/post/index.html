@@ -7,7 +7,7 @@
       <div class='textPostDiv col-md-5 col-xs-12 col-s-12 profilePostDate'>
         <h3>{{post.author}}</h3>
         <hr class='left'>
-        <h5>March 12th, 2016</h5>
+        <h5>{{post.time}}</h5>
       </div>
       <div class='postListTitle textPostDiv col-md-5 col-xs-12 col-s-12'>
         <h3>{{post.title}}</h3>
@@ -33,10 +33,8 @@
     </div>
     <div class='row'>
       <div class='col-md-12 col-xs-12 col-s-12 editButtonDiv'>
-        <button type="submit" class='btn btn-primary' ng-show="post.facebook_id == user"><a href="/posts/{{post.id}}/edit">Edit Post</a></button>
-        <button type="submit" class='btn btn-danger' ng-show="post.facebook_id == user">Delete Post</button>
-
-        <p>{{post.description}}</p>
+        <button type="submit" class='btn btn-primary' ng-show="post.facebook_id == user || userAdmin == true"><a href="/posts/{{post.id}}/edit">Edit Post</a></button>
+        <button type="submit" class='btn btn-danger' ng-show="post.facebook_id == user || userAdmin == true">Delete Post</button>
 
       </div>
     </div>

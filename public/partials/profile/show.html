@@ -21,7 +21,7 @@
       <div class='row'>
         <div class=' col-md-10 col-xs-12 col-s-12'>
           <h3>Member Since:</h3>
-          <p>{{user.created_at.slice(5,7)}}-{{user.created_at.slice(8, 10)}}-{{user.created_at.slice(0,4)}}</p>
+          <p>{{user.time}}</p>
           <h3>Bio:</h3>
           <p>{{user.bio}}</p>
         </div>
@@ -48,7 +48,7 @@
     <div class='textPostDiv col-md-10 col-xs-12 col-s-12 profilePostDate'>
       <h3>{{post.title}}</h3>
       <hr class='left'>
-      <h5>March 12th, 2016</h5>
+      <h5>{{post.time}}</h5>
     </div>
 
   </div>
@@ -63,7 +63,6 @@
       <div ng-show=post.picture_url class='imageHider'>
         <img class='img-responsive activityPic center-block' src="{{post.picture_url}}">
       </div>
-      <button class='btn btn-primary btn-sm'><a href="/posts/{{post.id}}/edit">Edit Post</a></button>
     </div>
     <div class='col-md-5 col-xs-12 col-s-12'>
       <h3 class='postDescription'>{{post.description}}</p>
@@ -72,7 +71,7 @@
   </div>
   <div class='row'>
     <div class='col-md-12 col-xs-12 col-s-12 editButtonDiv'>
-      <button type="submit" class='btn btn-primary'>Edit Post</button>
+      <button type="submit" class='btn btn-primary'><a href="/posts/{{post.id}}/edit">Edit Post</a></button>
       <button type="submit" class='btn btn-danger'>Delete Post</button>
     </div>
   </div>
