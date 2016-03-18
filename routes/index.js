@@ -139,11 +139,19 @@ router.get('/dsflksldkjf23423lkdjfvVVslkdjflslss', function(req, res){
   })
 })
 
-router.get('/post/:id', function(req,res, next){
+router.post('/post/edit', upload.single('file'), function (req, res, next) {
+  Posts().where("id", req.body.postId).del().then(function (response) {
+
+  })
+
+})
+
+router.get('/post/:id', function(req, res, next){
   Posts().where('id', req.params.id).first().then(function(response){
     res.send(response);
     })
 })
+
 
 // Posts().where('id', req.params.id).then(function(response){
 //   console.log('THIS IS THE POST WE WANT');

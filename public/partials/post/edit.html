@@ -5,7 +5,7 @@
    </div>
  </div>
  <div class='row newRow'>
-   <form>
+   <form method="POST" action="/post/edit" enctype="multipart/form-data">
      <div class='textPostDiv col-md-3 col-xs-12 col-s-12'>
        <h3>{{postInfo.author}}</h3>
        <img class='img-responsive center-block'>
@@ -46,10 +46,11 @@
        <div class='row'>
          <div class='textPostDiv col-md-12 col-xs-12 col-s-12'>
            <h3>Photo Upload</h3>
-           <input type = "file" value = "Browse...">
+           <input type="file" name="file" value = "Browse...">
+           <input type="hidden" name="postId" value="{{postInfo.id}}">
            <div class='row'>
              <div class='textPostDiv form-group col-md-12 col-xs-12 col-s-12 submitButtonDiv'>
-               <button type="submit" class='btn btn-primary btn-lg' ng-click="submitEdit()">Submit Editted Post</button>
+               <button type="submit" class='btn btn-primary btn-lg'>Submit Editted Post</button>
              </form>
              </div>
            </div>
