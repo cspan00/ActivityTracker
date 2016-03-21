@@ -1,9 +1,12 @@
 <div class='feedContainer'>
   <div class="postListDiv container" ng-repeat = "post in posts | orderBy: 'id' : 'reverse'">
+<!-- <form method="POST" action="/post/{{post.id}}/delete"> -->
     <div class="row topPostRow">
       <div class='col-md-2 col-xs-12 col-s-12'>
         <img class='img-responsive center-block authorPic' src="{{post.author_pic}}">
       </div>
+
+
       <div class='textPostDiv col-md-5 col-xs-12 col-s-12 profilePostDate'>
         <h3>{{post.author}}</h3>
         <hr class='left'>
@@ -32,16 +35,20 @@
       </div>
     </div>
     <div class='row'>
+
       <div class='col-md-12 col-xs-12 col-s-12 editButtonDiv'>
         <button type="submit" class='btn btn-primary' ng-show="post.facebook_id == user || userAdmin == true"><a href="/posts/{{post.id}}/edit">Edit Post</a></button>
-        <button type="submit" class='btn btn-danger' ng-show="post.facebook_id == user || userAdmin == true"><a href="/posts/{{post.id}}/delete">Delete Post</a></button>
+        <button type="submit" class='btn btn-danger' ng-show="post.facebook_id == user || userAdmin == true">Delete Post</button>
+
 
       </div>
     </div>
+
     <div class='row 2'>
       <div class='bob col-md-12 col-xs-12 col-s-12'>
         <p>There aren't any comments yet!</p>
       </div>
     </div>
+    <!-- </form> -->
   </div>
 </div>

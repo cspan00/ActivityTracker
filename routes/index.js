@@ -159,6 +159,8 @@ router.get('/post/:id', function(req, res, next){
 })
 
 router.post('/post/:id/delete', function (req, res, next) {
+  console.log("this is the delete route");
+  console.log(req.params.id)
   Posts().where('id', req.params.id).first().del().then(function (response) {
     res.redirect('/#/posts')
   })
