@@ -1,39 +1,45 @@
 <div class="postDiv container">
   <div class="row topPostRow">
     <div class='col-md-2 col-xs-12 col-s-12'>
-      <img class='img-responsive' src="http://placehold.it/150x150">
+      <img class='img-responsive center-block authorPic' src="{{postInfo.author_pic}}">
     </div>
-    <div class='textPostDiv col-md-3 col-xs-12 col-s-12'>
-      <h3><a href="/profile/{{post.facebook_id}}">{{post.author}}</a></h3>
-      <p>March 12th, 2016</p>
+    <div class='textPostDiv col-md-5 col-xs-12 col-s-12 profilePostDate'>
+      <h3>{{postInfo.author}}</h3>
+      <hr class='left'>
+      <h5>{{postInfo.time}}</h5>
     </div>
-    <div class='col-md-7 col-xs-12 col-s-12 progressDiv'>
-      <p>Progress to goal:</p>
-     <div class="progress progress-striped active">
-      <div class="progress-bar"  role="progressbar" aria-valuenow="75" aria-valuemin="75" aria-valuemax="100">
+    <div class='postListTitle textPostDiv col-md-5 col-xs-12 col-s-12'>
+      <h3>{{postInfo.title}}</h3>
+    </div>
+
+  </div>
+  <div class='row bottomRow'>
+    <div class='pointCenter col-md-2 col-xs-12 col-s-12'>
+      <div class='pointVert'>
+        <h2>{{postInfo.hours}}</h2>
+        <p>points</p>
       </div>
     </div>
+    <div class='col-md-5 col-xs-12 col-s-12'>
+      <div ng-show=postInfo.picture_url class='imageHider'>
+        <img class='img-responsive activityPic center-block' src="{{postInfo.picture_url}}">
+      </div>
+    </div>
+    <div class='col-md-5 col-xs-12 col-s-12'>
+      <hr>
+      <h3 class='postDescription'>{{postInfo.description}}</p>
     </div>
   </div>
   <div class='row'>
-    <div class='pointCenter col-md-2 col-xs-12 col-s-12'>
-        <div class='pointVert'>
-          <h2>{{post.time}}</h2>
-          <p>points</p>
-        </div>
-      </div>
-      <div class='col-md-5 col-xs-12 col-s-12'>
-        <img class='img-responsive activityPic' src="{{post.picture_url}}">
-      </div>
-      <div class='col-md-5 col-xs-12 col-s-12'>
-        <p>{{post.description}}</p>
-        <button class='btn btn-primary btn-sm' ng-show="post.facebook_id == user || userAdmin == true"><a href="/posts/{{post.id}}/edit">Edit Post</a></button>
-        <button type="submit" class='btn btn-danger btn-sm' ng-click="submitPost()">Delete Post</button>
-      </div>
-    </div>
-    <div class='row 2'>
-      <div class='bob col-md-12 col-xs-12 col-s-12'>
-        <p>There aren't any comments yet!</p>
-      </div>
+    <div class='col-md-12 col-xs-12 col-s-12 editButtonDiv'>
+      <a href="/posts/{{postInfo.id}}/edit"><button type="submit" class='btn btn-primary' ng-show="postInfo.facebook_id == user || userAdmin == true" >Edit Post</button></a>
+      <button type="submit" class='btn btn-danger' ng-show="postInfo.facebook_id == user || userAdmin == true">Delete Post</button>
+
     </div>
   </div>
+  <div class='row 2'>
+    <div class='comments col-md-12 col-xs-12 col-s-12'>
+      <p>There aren't any comments yet!</p>
+    </div>
+  </div>
+</div>

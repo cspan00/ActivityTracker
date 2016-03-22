@@ -29,7 +29,7 @@ app.config(function ($routeProvider, $authProvider, $locationProvider) {
  })
  .when('/posts/:id',{
    templateUrl: 'partials/post/show.html',
-   controller: 'postController'
+   controller: 'editController'
  })
  .when('/posts/:id/edit',{
    templateUrl: 'partials/post/edit.html',
