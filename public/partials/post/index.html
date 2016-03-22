@@ -40,7 +40,29 @@
     </div>
     <div class='row 2'>
       <div class='comments col-md-12 col-xs-12 col-s-12'>
-        <p>There aren't any comments yet!</p>
+        <div class='row commentRow'>
+          <div class='col-md-1'>
+            <img src="{{author_picture}}" alt="" class='commentPic img-responsive'>
+          </div>
+          <div class='col-md-9 form-group'>
+            <!-- <form method="POST" action="/post/{{comment.id}}/comment"> -->
+            <input type="text" class='newComment form-control'>
+          </div>
+          <div class='col-md-2'>
+            <input type='submit' class='btn' value='+ Comment'>
+            </div>
+          <!-- </form> -->
+        </div>
+        <div class='row' ng-repeat='comment in comments'>
+          <div class='col-md-2'>
+            <img src="https://graph.facebook.com/{{comment.facebook_id}}/picture?type=large" class="img-responsive authorPic">
+          </div>
+          <div class='col-md-10 commentTitle'>
+            <h4>{{comment.author}}</h4>
+            <h5>{{comment.created_at.slice(0,10)}}</h5>
+            <p>{{comment.comment}}</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>

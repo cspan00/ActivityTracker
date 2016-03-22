@@ -45,12 +45,18 @@ this.allUser = function (){
 
 this.editPost = function (post_id) {
   return $http.get('post/'+ post_id).then(function (response) {
-    return response.data
-  })
+      return response.data
+    })
+  }
+
+  this.postComments = function (post_id){
+    return $http.get('post/' + post_id + '/comments').then(function(comments){
+      return comments.data
+    })
   }
 
 this.showPost = function (post_id) {
-  return $http.get('post/'+ post_id).then(function (response) {
+  return $http.get('post/'+ post_id + '/comments').then(function (response) {
     return response.data
   })
   }

@@ -25,6 +25,10 @@ function Posts(){
   return knex('posts')
 }
 
+function Comments(){
+  return knex('comments')
+}
+
 function createToken(user){
   return jwt.sign(user, process.env.TOKEN_SECRET)
 }
@@ -148,6 +152,17 @@ router.get('/post/:id', function(req,res, next){
   Posts().where('id', req.params.id).first().then(function(response){
     res.send(response);
     })
+})
+router.get('/post/:id/comments', function(req,res, next){
+  Comments().where('post_id', req.params.id).then(function(response){
+    res.send(response);
+    })
+})
+
+router.post('/post/:id/comment', function(req, res, next){
+  var comment = {}
+  comment.facebook_id = localStorage.satellizer_token
+  Comments().insert
 })
 
 // Posts().where('id', req.params.id).then(function(response){

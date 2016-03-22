@@ -40,6 +40,11 @@ app.config(function ($routeProvider, $authProvider, $locationProvider) {
    controller: 'newController'
  })
 
+ .when('/posts/:id/comments/new',{
+   templateUrl: 'partials/post/comments/new.html',
+   controller: 'editController'
+ })
+
  .when('/login', {
    templateUrl: 'partials/login.html',
    controller: 'mainController'

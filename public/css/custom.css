@@ -536,3 +536,24 @@ a button{
 .aboutButton:hover{
   background-color: rgba(0, 0, 0, 0.05);
 }
+
+.commentTitle{
+  text-align: left;
+}
+
+.right{
+  text-align: right;
+}
+
+.right a input{
+  background-color: #4ea0c5;
+}
+
+.commentRow{
+  padding-top: 15px;
+}
+
+.newComment{
+  vertical-align: middle;
+  margin-top: 2px;
+}
