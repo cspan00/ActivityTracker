@@ -17,4 +17,4 @@ https://github.com/cspan00/ActivityTracker
 #Website Images
 Screen Shot:
 ![Screen Shot](/outside4adv.png)
-Format: ![Alt Text](url)
+
