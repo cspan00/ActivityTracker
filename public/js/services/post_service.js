@@ -20,10 +20,7 @@ var data = JSON.stringify({token : token})
 this.getPostById = function(facebook_id){
   var user_info = {}
   user_info.facebook_id = facebook_id
-  console.log(user_info);
   return $http.post('getposts', user_info).then(function(response){
-    console.log("this is the response");
-    console.log(response);
     return response.data
   })
 

@@ -1,9 +1,9 @@
 
 app.controller("postController", function($scope, $http, $auth, posts, $location, $route){
   posts.getPosts().then(function(response){
+    console.log("hitting this function");
     $scope.posts = response;
     $scope.time = response[0].created_at;
-
   })
 
   posts.getUserData().then(function (user) {
@@ -36,8 +36,7 @@ app.controller("postController", function($scope, $http, $auth, posts, $location
 
 posts.showPost().then(function(result){
   $scope.showPost = result;
-  console.log("****Showpost****");
-  console.log(result);
+
 })
 
 })

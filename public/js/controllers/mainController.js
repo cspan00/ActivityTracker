@@ -17,7 +17,7 @@ app.controller('mainController', function($scope, $rootScope, $location, $auth, 
      $auth.authenticate(provider)
        .then(function(response) {
          console.log('You have successfully signed in with ' + provider + '!');
-         $location.path('/posts')
+         $location.path('/feed')
        })
        .catch(function(error) {
          if (error.error) {

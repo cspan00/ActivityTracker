@@ -89,17 +89,17 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse" ng-controller="mainController">
             <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
-              <li ng-show="!user.session"><a href="home" >Home</a></li>
-              <li ng-show="user.session"><a href="posts">Feed</a></li>
-              <li ng-click="setNavTab()"><a ng-style="{'color': color.about}" href="about">About</a></li>
-              <li><a href="contact">Contact</a></li>
-              <li ng-show="!user.session"><a href="login">Sign In</a></li>
-              <li ng-show="user.session"><a href="home" ng-click="logout()">Logout</a></li>
-              <li ng-show="user.session"><a href="profile" >Profile</a></li>
-              <li ng-show='isAdmin'><a href="admin">Admin</a></li>
-              <li ng-show="user.session" class='addLi'><a class='add' href="newpost">&#43 Add Activity</a></li>
+              <li ng-show="!user.session"><a href="/#/home" >Home</a></li>
+              <li ng-show="user.session"><a href="/#/feed">Feed</a></li>
+              <li ng-click="setNavTab()"><a ng-style="{'color': color.about}" href="/#/about">About</a></li>
+              <li><a href="/#/contact">Contact</a></li>
+              <li ng-show="!user.session"><a href="/#/login">Sign In</a></li>
+              <li ng-show="user.session"><a href="/#/home" ng-click="logout()">Logout</a></li>
+              <li ng-show="user.session"><a href="/#/profile" >Profile</a></li>
+              <li ng-show='isAdmin'><a href="/#/admin">Admin</a></li>
+              <li ng-show="user.session" class='addLi'><a class='add' href="/#/newpost">&#43 Add Activity</a></li>
             </ul>
-            <h4 class='userName'>Hi, <a class='headName' href="profile">{{userName}}</a></h4>
+            <h4 class='userName'>Hi, <a class='headName' href="/#/profile">{{userName}}</a></h4>
           </div><!--/.nav-collapse -->
           </div>
         </nav>

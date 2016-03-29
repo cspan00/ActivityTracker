@@ -71,7 +71,7 @@ router.post('/auth/facebook', function(req,res){
               console.log(error);
             }).then(function(){
               res.send({token: token})
-              res.redirect('/posts')
+              res.redirect('/feed')
             })
 
       })
@@ -82,7 +82,9 @@ router.post('/auth/facebook', function(req,res){
 router.get('/posts', function(req,res,next){
   Posts().select().then(function(response){
     res.send(response)
+
   })
+
 })
 //Verify User Logged in: getting user information
 router.post('/user', function(req, res){
@@ -126,7 +128,7 @@ Users().where('facebook_id', req.body.facebook_id).first().then(function(result)
   })
 })
 Posts().insert(post).then(function(result){
-  res.redirect('/#/posts')
+  res.redirect('/#/feed')
 })
 fs.unlink('./'+req.file.filename)
 })
@@ -151,7 +153,7 @@ router.post('/post/edit', function (req, res, next) {
     address: req.body.location,
     description: req.body.description
   }).then(function (response) {
-    res.redirect('/#/posts')
+    res.redirect('/#/feed')
   })
 
 })
@@ -177,7 +179,7 @@ router.post('/post/:id/delete', function (req, res, next) {
   console.log("this is the delete route");
   console.log(req.params.id)
   Posts().where('id', req.params.id).first().del().then(function (response) {
-    res.redirect('/#/posts')
+    res.redirect('/#/feed')
   })
 })
 
