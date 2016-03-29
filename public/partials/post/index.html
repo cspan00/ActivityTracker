@@ -1,6 +1,6 @@
 <div class='feedContainer'>
   <div class="postListDiv container" ng-repeat = "post in posts | orderBy: 'id' : 'reverse'">
-<!-- <form method="POST" action="/post/{{post.id}}/delete"> -->
+    <form method="POST" action="{{post.link}}">
     <div class="row topPostRow">
       <div class='col-md-2 col-xs-12 col-s-12'>
         <img class='img-responsive center-block authorPic' src="{{post.author_pic}}">
@@ -49,6 +49,6 @@
         <p>There aren't any comments yet!</p>
       </div>
     </div>
-    <!-- </form> -->
+    </form>
   </div>
 </div>

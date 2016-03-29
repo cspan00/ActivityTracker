@@ -3,7 +3,7 @@ app.controller("postController", function($scope, $http, $auth, posts, $location
   posts.getPosts().then(function(response){
     $scope.posts = response;
     $scope.time = response[0].created_at;
-    
+    console.log(response)
 
   })
 
