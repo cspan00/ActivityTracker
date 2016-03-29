@@ -29,7 +29,7 @@ app.config(function ($routeProvider, $authProvider, $locationProvider) {
  })
  .when('/posts/:id',{
    templateUrl: 'partials/post/show.html',
-   controller: 'postController'
+   controller: 'editController'
  })
  .when('/posts/:id/edit',{
    templateUrl: 'partials/post/edit.html',
@@ -38,6 +38,11 @@ app.config(function ($routeProvider, $authProvider, $locationProvider) {
  .when('/newpost',{
    templateUrl: 'partials/post/new.html',
    controller: 'newController'
+ })
+
+ .when('/posts/:id/comments/new',{
+   templateUrl: 'partials/post/comments/new.html',
+   controller: 'editController'
  })
 
  .when('/login', {

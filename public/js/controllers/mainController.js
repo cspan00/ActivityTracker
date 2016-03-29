@@ -1,5 +1,6 @@
-app.controller('mainController', function($scope, $rootScope, $location, $auth) {
+app.controller('mainController', function($scope, $rootScope, $location, $auth, posts) {
   $scope.user = {}
+  $scope.userName
   // $scope.loggedIn = false;
   // $scope.logIn = true;
    $scope.login = function() {
@@ -16,7 +17,6 @@ app.controller('mainController', function($scope, $rootScope, $location, $auth) 
      $auth.authenticate(provider)
        .then(function(response) {
          console.log('You have successfully signed in with ' + provider + '!');
-         console.log(response.data.token);
          $location.path('/posts')
        })
        .catch(function(error) {
@@ -35,20 +35,6 @@ app.controller('mainController', function($scope, $rootScope, $location, $auth) 
      $auth.logout()
      console.log("successfully logged out!");
    }
-   $rootScope.active = {};
-   $rootScope.active.home = true;
-   $rootScope.color = {};
-   $rootScope.color.home = 'deepskyblue';
-   $rootScope.color.about = 'white';
-
-   $rootScope.setNavTab = function(){
-     $rootScope.color.about = 'deepskyblue';
-     console.log($rootScope.color.about);
-     console.log("****WORKING***");
-   }
-
-
-
 
   $scope.logout = function(){
     $auth.logout()
@@ -68,5 +54,10 @@ app.controller('mainController', function($scope, $rootScope, $location, $auth) 
   })
   console.log($scope);
   console.log("Logged in: " + JSON.stringify($scope.user));
+
+  posts.getUserData().then(function (user) {
+    $scope.userName = user.first_name
+    console.log("username is: " + $scope.userName);
+  })
 
  });
