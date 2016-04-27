@@ -1,7 +1,6 @@
 
 app.controller("postController", function($scope, $http, $auth, posts, $location, $route){
   posts.getPosts().then(function(response){
-    console.log("hitting this function");
     $scope.posts = response;
     $scope.time = response[0].created_at;
   })
@@ -9,8 +8,6 @@ app.controller("postController", function($scope, $http, $auth, posts, $location
   posts.getUserData().then(function (user) {
     $scope.userAdmin = user.is_admin
     $scope.user = user.facebook_id
-    console.log($scope.user);
-    console.log($scope.userAdmin);
   })
 
 

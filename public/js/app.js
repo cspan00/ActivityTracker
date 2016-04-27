@@ -39,7 +39,7 @@ app.config(function ($routeProvider, $authProvider) {
    templateUrl: 'partials/post/new.html',
    controller: 'newController'
  })
-
+// Why does this utilize edit controller? 
  .when('/posts/:id/comments/new',{
    templateUrl: 'partials/post/comments/new.html',
    controller: 'editController'
