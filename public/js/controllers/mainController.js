@@ -1,8 +1,6 @@
 app.controller('mainController', function($scope, $rootScope, $location, $auth, posts) {
   $scope.user = {}
   $scope.userName
-  // $scope.loggedIn = false;
-  // $scope.logIn = true;
    $scope.login = function() {
      $auth.login($scope.user)
        .then(function() {
@@ -35,12 +33,6 @@ app.controller('mainController', function($scope, $rootScope, $location, $auth, 
      $auth.logout()
      console.log("successfully logged out!");
    }
-
-  $scope.logout = function(){
-    $auth.logout()
-    console.log("successfully logged out!");
-  }
-
   $rootScope.$on('$locationChangeSuccess', function(){
       if(localStorage.satellizer_token){
         // $scope.logIn = false;
@@ -52,8 +44,6 @@ app.controller('mainController', function($scope, $rootScope, $location, $auth, 
      }
 
   })
-  console.log($scope);
-  console.log("Logged in: " + JSON.stringify($scope.user));
 
   posts.getUserData().then(function (user) {
     $scope.userName = user.first_name
