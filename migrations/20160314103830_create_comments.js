@@ -4,7 +4,6 @@ exports.up = function(knex, Promise) {
    t.increments();
    t.string('facebook_id');
    t.string('post_id');
-   t.string('author');
    t.text('comment');
    t.timestamps();
  })

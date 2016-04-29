@@ -8,6 +8,7 @@ app.controller("postController", function($scope, $http, $auth, posts, $location
   posts.getUserData().then(function (user) {
     $scope.userAdmin = user.is_admin
     $scope.user = user.facebook_id
+
   })
 
   $scope.deletePost = function(){
@@ -15,6 +16,20 @@ app.controller("postController", function($scope, $http, $auth, posts, $location
       $route.reload();
     })
   }
+
+  $scope.addComment = function(){
+    var post_id = this.post.id
+    var post_comment = this.comment
+    posts.getUserData().then(function(user){
+    var comment = {}
+    comment.comment = post_comment
+    comment.facebook_id = user.facebook_id
+    comment.post_id = post_id
+    $http.post('post/'+post_id+'/comments', comment).then(function(response){
+      })
+    $route.reload();
+  })
+}
 
 
   //checks to see if logged in user has is_admin set to true or false, the sets isAdmin to that value
@@ -40,5 +55,7 @@ posts.showPost().then(function(result){
   $scope.showPost = result;
 
 })
+
+
 
 })

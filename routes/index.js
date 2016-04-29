@@ -104,6 +104,7 @@ router.get('/user/:id', function(req, res, next){
 
 //Adding posts
 router.post('/new/post', upload.single('file'), function(req, res, next){
+console.log(req.body);
 cloudinary.uploader.upload(req.file.filename, function(result) {
 var post ={}
 post.facebook_id = req.body.facebook_id
@@ -169,10 +170,11 @@ router.get('/post/:id/comments', function(req,res, next){
     })
 })
 
-router.post('/post/:id/comment', function(req, res, next){
-  var comment = {}
-  comment.facebook_id = localStorage.satellizer_token
-  Comments().insert
+router.post('/post/:id/comments', function(req, res, next){
+  console.log(req.body);
+  Comments().insert(req.body).then(function(response){
+    res.status(200)
+  })
 })
 
 router.get('/post/:id/delete', function (req, res, next) {
