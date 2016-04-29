@@ -16,7 +16,7 @@
           <div class='form-group textPostDiv col-md-12 col-xs-12 col-s-12'>
             <label for="postTitle">Name your Activity</label>
             <br>
-            <input class='form-control titleInput' type="text" name="title" ng-model="title">
+            <input class='form-control titleInput' type="text" name="title" ng-model="title" required>
           </div>
         </div>
         <div class='row'>
@@ -25,7 +25,7 @@
             <br>
             <div class='row'>
               <div class='col-md-8 form-group center-block lefty'>
-                <input class='form-control cityInput' type="text" name="location" placeholder="City" ng-model="location">
+                <input class='form-control cityInput' type="text" name="location" placeholder="City" ng-model="location" required>
               </div>
               <div class='col-md-4 form-group center-block lefty'>
                 <select class="form-control stateSelect" name="">
@@ -51,13 +51,13 @@
           <div class='form-group textPostDiv col-md-12 col-xs-12 col-s-12'>
             <label for="description">Description</label>
             <br>
-            <textarea rows='4' class='form-control' type="text" name="description" ng-model="description"></textarea>
+            <textarea rows='4' class='form-control' type="text" name="description" ng-model="description" required></textarea>
           </div>
         </div>
         <div class='row'>
           <div class='textPostDiv col-md-12 col-xs-12 col-s-12'>
             <h3>Photo Upload</h3>
-            <input type="file" name="file">
+            <input type="file" name="file" required>
             <div class='row'>
               <div class='textPostDiv form-group col-md-12 col-xs-12 col-s-12 submitButtonDiv'>
                 <input type = "hidden" name = "facebook_id" value="{{facebook_id}}"></input>
