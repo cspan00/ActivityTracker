@@ -1,12 +1,10 @@
 app.service('posts', function($http){
   this.getPosts = function(){
   return $http.get('posts').then(function(response){
-    for (var i = 0; i < response.data.length; i++) {
-      response.data[i].link = '/post/' + response.data[i].id + '/delete'
-    }
-    return response.data;
+    return response.data
   })
 };
+
 
 this.getUserData = function(){
 

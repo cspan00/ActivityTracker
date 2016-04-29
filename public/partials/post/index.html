@@ -1,6 +1,5 @@
 <div class='feedContainer'>
   <div class="postListDiv container" ng-repeat = "post in posts | orderBy: 'id' : 'reverse'">
-    <form method="POST" action="{{post.link}}">
     <div class="row topPostRow">
       <div class='col-md-2 col-xs-12 col-s-12'>
         <img class='img-responsive center-block authorPic' src="{{post.author_pic}}">
@@ -38,7 +37,7 @@
 
       <div class='col-md-12 col-xs-12 col-s-12 editButtonDiv'>
         <a href="/#/posts/{{post.id}}/edit"><button type="submit" class='btn btn-primary' ng-show="post.facebook_id == user || userAdmin == true" >Edit Post</button></a>
-        <button type="submit" class='btn btn-danger' ng-show="post.facebook_id == user || userAdmin == true">Delete Post</button>
+        <a href='/#/feed' class='btn btn-danger' ng-click = "deletePost()" ng-show="post.facebook_id == user || userAdmin == true">Delete Post</a>
 
 
       </div>
@@ -52,7 +51,7 @@
           </div>
           <div class='col-md-9 form-group'>
             <!-- <form method="POST" action="/post/{{comment.id}}/comment"> -->
-            <input type="text" class='newComment form-control' required>
+            <input type="text" class='newComment form-control'>
           </div>
           <div class='col-md-2'>
             <a href = "" class='btn btn-default'> + Comment</a>
@@ -71,6 +70,5 @@
         </div>
       </div>
     </div>
-    </form>
   </div>
 </div>

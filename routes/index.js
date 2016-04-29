@@ -175,7 +175,7 @@ router.post('/post/:id/comment', function(req, res, next){
   Comments().insert
 })
 
-router.post('/post/:id/delete', function (req, res, next) {
+router.get('/post/:id/delete', function (req, res, next) {
   console.log("this is the delete route");
   console.log(req.params.id)
   Posts().where('id', req.params.id).first().del().then(function (response) {

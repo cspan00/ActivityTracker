@@ -10,6 +10,11 @@ app.controller("postController", function($scope, $http, $auth, posts, $location
     $scope.user = user.facebook_id
   })
 
+  $scope.deletePost = function(){
+    return $http.get('post/'+this.post.id+'/delete').then(function(response){
+      $route.reload();
+    })
+  }
 
 
   //checks to see if logged in user has is_admin set to true or false, the sets isAdmin to that value
