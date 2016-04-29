@@ -14,7 +14,7 @@
        <div class='row'>
          <div class='form-group textPostDiv col-md-12 col-xs-12 col-s-12'>
            <label for="postTitle">Title</label>
-           <input class='form-control' type="text" name="title" ng-model="postInfo.title">
+           <input class='form-control' type="text" name="title" ng-model="postInfo.title" required>
            <br>
          </div>
        </div>
@@ -22,7 +22,7 @@
          <div class='textPostDiv form-group col-md-12 col-xs-12 col-s-12'>
            <label for="locationOfActivity">Location</label>
            <br>
-           <input class='form-control' type="text" name="location" ng-model="postInfo.address">
+           <input class='form-control' type="text" name="location" ng-model="postInfo.address" required>
          </div>
          </div>
          <div class='row'>
@@ -38,7 +38,7 @@
          <div class='form-group textPostDiv col-md-12 col-xs-12 col-s-12'>
            <label for="description">Description</label>
            <br>
-           <textarea rows='4' class='form-control' type="text" name="description" ng-model="postInfo.description"></textarea>
+           <textarea rows='4' class='form-control' type="text" name="description" ng-model="postInfo.description" required></textarea>
          </div>
        </div>
        <div class='row'>
