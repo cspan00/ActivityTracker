@@ -8,7 +8,7 @@ app.config(function ($routeProvider, $authProvider) {
 
  $authProvider.facebook({
 
-     clientId: '230855193941767',
+     clientId: '976973585702482',
      scope: ['email'],
      scopeDelimiter: ',',
      profileFields: ['name', 'id', 'picture.type(large)', 'emails']
