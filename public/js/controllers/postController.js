@@ -47,15 +47,6 @@ app.controller("postController", function($scope, $http, $auth, posts, $location
 
   posts.allUser().then(function(result){
     $scope.userStats = result;
-
   })
-
-
-posts.showPost().then(function(result){
-  $scope.showPost = result;
-
-})
-
-
 
 })

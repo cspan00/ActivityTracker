@@ -8,7 +8,7 @@ app.config(function ($routeProvider, $authProvider) {
 
  $authProvider.facebook({
 
-     clientId: '976973585702482',
+     clientId: '230855193941767',
      scope: ['email'],
      scopeDelimiter: ',',
      profileFields: ['name', 'id', 'picture.type(large)', 'emails']
@@ -39,12 +39,6 @@ app.config(function ($routeProvider, $authProvider) {
    templateUrl: 'partials/post/new.html',
    controller: 'newController'
  })
-// Why does this utilize edit controller?
- .when('/posts/:id/comments/new',{
-   templateUrl: 'partials/post/comments/new.html',
-   controller: 'editController'
- })
-
  .when('/login', {
    templateUrl: 'partials/login.html',
    controller: 'mainController'

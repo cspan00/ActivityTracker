@@ -59,9 +59,3 @@ this.showPost = function (post_id) {
   })
   }
 })
-
-app.service('navs', function(){
-  this.login = function(){
-    return myVar = true;
-  }
-})
