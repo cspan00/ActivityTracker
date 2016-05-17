@@ -9,7 +9,7 @@
       <div class='textPostDiv col-md-5 col-xs-12 col-s-12 profilePostDate'>
         <a href = "/#/user/{{post.facebook_id}}"><h3>{{post.author}}</h3></a>
         <hr class='left'>
-        <h5>{{post.time}}</h5>
+        <h5>{{post.time | amCalendar}}</h5>
       </div>
       <div class='postListTitle textPostDiv col-md-5 col-xs-12 col-s-12'>
         <h3>{{post.title}}</h3>

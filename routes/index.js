@@ -64,7 +64,7 @@ router.post('/auth/facebook', function(req,res){
           user.last_name = profile.last_name
           user.name = profile.name;
           user.total_hours = 0;
-          user.time = moment().calendar()
+          user.time = new Date();
           var token = createToken(user)
           Users().insert(user)
             .catch(function(error){
@@ -117,7 +117,7 @@ post.description = req.body.description
 post.picture_url = result.secure_url
 post.public_id = result.public_id;
 post.hours = req.body.hours
-post.time = moment().calendar()
+post.time = new Date();
 
 //update total number of hours for user when they make a post
 //does math to calculate total hours for user.
