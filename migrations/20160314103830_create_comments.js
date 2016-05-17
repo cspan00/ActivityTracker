@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
    t.string('facebook_id');
    t.string('post_id');
    t.text('comment');
-   t.timestamps();
+   t.text('time')
  })
 };
 
