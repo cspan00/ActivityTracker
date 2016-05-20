@@ -22,7 +22,10 @@
           <h3>Member Since:</h3>
           <p>{{user.time | amCalendar}}</p>
           <h3> Kids: </h3>
-          <p> No Kids added Yet! </p>
+              <div ng-repeat = "kid in kids">
+                <img class = "kidPic" src = "{{kid.kid_pic}}">
+                <p> {{kid.kid_name}} </p>
+              </div>
           <button class = "btn btn-primary" ng-click = "showKidForm()"> Add Kid!</button>
               <form method = "POST" action = "/new/kid" enctype = "multipart/form-data" ng-show = "kidForm">
                 <label for = "kid_name"> Enter a Name: </label>

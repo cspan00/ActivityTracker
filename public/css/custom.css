@@ -575,3 +575,8 @@ a button{
 .kidName{
   width: 50%;
 }
+
+.kidPic{
+  width: 50px;
+  border-radius: 50%;
+}

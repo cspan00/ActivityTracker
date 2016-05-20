@@ -212,4 +212,10 @@ router.post('/new/kid', upload.single('file'), function (req, res, next){
   })
 })
 
+router.get('/kids/:id', function(req, res, next){
+  Kids().where('facebook_id', req.params.id).select().then(function(response){
+    res.send(response)
+  })
+});
+
 module.exports = router;

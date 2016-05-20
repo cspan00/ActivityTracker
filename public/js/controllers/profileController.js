@@ -7,6 +7,11 @@ app.controller("profileController", function($scope, $http, posts, $location, $r
         $scope.posts = result;
         console.log($scope.posts);
     })
+    posts.getKids(result.facebook_id).then(function(result){
+      console.log(result);
+      $scope.kids = result
+    })
+
 
   })
 
@@ -20,6 +25,8 @@ $scope.showKidForm = function(){
   $scope.kidForm = !$scope.kidForm;
   console.log("clickded");
 }
+
+
 
 
 
