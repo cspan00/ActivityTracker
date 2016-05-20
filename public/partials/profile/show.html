@@ -21,6 +21,17 @@
         <div class=' col-md-10 col-xs-12 col-s-12'>
           <h3>Member Since:</h3>
           <p>{{user.time | amCalendar}}</p>
+          <h3> Kids: </h3>
+          <p> No Kids added Yet! </p>
+          <button class = "btn btn-primary" ng-click = "showKidForm()"> Add Kid!</button>
+            <form method = "POST" enctype = "multipart/form-data" ng-show = "kidForm">
+            <label for = "kid_name"> Enter a Name: </label>
+            <br>
+            <input class='form-control kidName' type="text" name="kid_name" ng-model="kid_name" required>
+            <p> upload a photo: </p>
+            <input type = "file" name = "file" required>
+            <button type="submit" class='btn btn-primary kid_submit'>Submit</button>
+          </form>
         </div>
         <div class='profilePoints col-md-2 col-xs-12 col-s-12'>
           <h3>Total Points:</h3>

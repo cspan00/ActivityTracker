@@ -567,3 +567,11 @@ a button{
   border-radius: 5px;
   width: 300px;
 }
+
+.kid_submit{
+  margin-top: 10px;
+}
+
+.kidName{
+  width: 50%;
+}

@@ -15,4 +15,10 @@ app.controller("profileController", function($scope, $http, posts, $location, $r
       $route.reload();
     })
   }
+
+$scope.showKidForm = function(){
+  $scope.kidForm = !$scope.kidForm;
+  console.log("clickded");
+}
+
 })
