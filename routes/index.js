@@ -29,6 +29,10 @@ function Comments(){
   return knex('comments')
 }
 
+function Kids(){
+  return knex('kids')
+}
+
 function createToken(user){
   return jwt.sign(user, process.env.TOKEN_SECRET)
 }
@@ -197,8 +201,15 @@ router.get('/post/:id/delete', function (req, res, next) {
 })
 
 router.post('/new/kid', upload.single('file'), function (req, res, next){
-  console.log("this is the kid &&&&&&&&&&&&&&&&&&&");
-  console.log(req.body);
+  cloudinary.uploader.upload(req.file.filename, function(result) {
+    var kid = {};
+    kid.kid_pic = result.secure_url;
+    kid.kid_name = req.body.kid_name;
+    kid.facebook_id = req.body.facebook_id;
+    Kids().insert(kid).then(function(result){
+      res.redirect('/#/profile')
+    })
+  })
 })
 
 module.exports = router;
