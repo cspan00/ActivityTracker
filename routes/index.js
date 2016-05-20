@@ -196,4 +196,9 @@ router.get('/post/:id/delete', function (req, res, next) {
   })
 })
 
+router.post('/new/kid', upload.single('file'), function (req, res, next){
+  console.log("this is the kid &&&&&&&&&&&&&&&&&&&");
+  console.log(req.body);
+})
+
 module.exports = router;
