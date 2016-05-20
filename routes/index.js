@@ -178,10 +178,23 @@ router.post('/post/:id/comments', function(req, res, next){
 })
 
 router.get('/post/:id/delete', function (req, res, next) {
-  console.log("this is the delete route");
+  console.log("this is the delete route&&&&&&&&&&&&&&&&&&&&&&&&&&");
   console.log(req.params.id)
-  Posts().where('id', req.params.id).first().del().then(function (response) {
-    res.redirect('/#/feed')
+  var hours;
+  var post_id
+  Posts().where('id', req.params.id).first().then(function (response) {
+    var hours = response.hours;
+    var post_id = response.id;
+    Users().where('facebook_id', response.facebook_id).first().then(function(response){
+      var total_hours = response.total_hours;
+      var new_hours = parseFloat(total_hours) - parseFloat(hours);
+        Users().where('facebook_id', response.facebook_id).update('total_hours', new_hours).then(function(result){
+          res.send(200)
+            Posts().where('id', post_id).first().del().then(function(response){
+              res.send(200)
+            })
+        })
+    })
   })
 })
 
