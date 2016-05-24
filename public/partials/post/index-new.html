@@ -23,13 +23,15 @@
 
   <div masonry >
       <div class="masonry-brick feedPost container" ng-repeat="post in posts">
-        <!-- <img src="{{post.author_pic}}">
-        <a href = "/#/user/{{post.facebook_id}}"><h3>{{post.author}}</h3></a>
-        <h5>{{post.time | amCalendar}}</h5>
-        <h3>{{post.title}}</h3>
-        <h2>{{post.hours}}</h2> -->
+        <!-- <img src="{{post.author_pic}}"> -->
         <img class="post-img" src="{{post.picture_url}}">
-        <!-- <p>{{post.description}}</p> -->
+        <div class="post-content">
+          <h3>{{post.title}}</h3>
+          <a href = "/#/user/{{post.facebook_id}}"><h3>{{post.author}}</h3></a>
+          <h2>{{post.hours}}</h2>
+          <p>{{post.description}}</p>
+          <h5>{{post.time | amCalendar}}</h5>
+        </div>
       </div>
   </div>
 

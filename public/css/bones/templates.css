@@ -11,7 +11,7 @@
   .templates {
     width: 600px; } }
 
-@media (max-width: 750px) {
+@media (max-width: 650px) {
   .templates {
     padding-top: 10em;
     padding-bottom: 5em;

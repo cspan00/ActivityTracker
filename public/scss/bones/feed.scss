@@ -25,8 +25,11 @@
   display: inline-block;
 }
 .post-img{
-  max-height: 500px;
+  height: 250px;
   width: auto;
+}
+.post-content{
+  background-color: skyblue;
 }
 
 
@@ -62,7 +65,7 @@
   }
 
 }
-@media (max-width: 750px) {
+@media (max-width: 650px) {
 
   .newPostForm{
     margin-bottom: 128px;
