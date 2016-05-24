@@ -1,3 +1,11 @@
-html{
-  background-color:tomato !important;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+@import 'bones/variables';
+@import 'bones/templates';
+@import 'bones/navbar';
+@import 'bones/bones';
+@import 'bones/feed';
+@import 'skin/navbar';

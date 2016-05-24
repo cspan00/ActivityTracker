@@ -1,0 +1,20 @@
+{
+  "name": "foo",
+  "description": "activity tracker",
+  "main": "",
+  "authors": [
+    "Brandon Jewell <brandon.royce.jewell@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/cspan00/ActivityTracker",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-masonry": "^0.16.0"
+  }
+}

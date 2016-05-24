@@ -1,7 +1,8 @@
 body{
-    background-image: url("../img/full-slider/full-slide2.jpg");
+    /*background-image: url("../img/full-slider/full-slide2.jpg");
     background-size: cover;
-    background-attachment: fixed, scroll;
+    background-attachment: fixed, scroll;*/
+    background-color: tan;
 }
 
 .slider_caption{
