@@ -11,8 +11,7 @@ header {
   width: 1200px;
   margin: auto;
   padding-left: 22px;
-  padding-right: 22px;
-  background-color: skyblue; }
+  padding-right: 22px; }
 
 .logo {
   height: 2em;
@@ -24,6 +23,14 @@ header {
 .mobilefooter {
   display: none; }
 
+@media (max-width: 1250px) {
+  .navcontent {
+    width: 950px; } }
+
+@media (max-width: 1000px) {
+  .navcontent {
+    width: 600px; } }
+
 @media (max-width: 750px) {
   .mobilefooter {
     display: block;
@@ -32,7 +39,8 @@ header {
     left: 0;
     right: 0;
     height: 3em;
-    background-color: red; }
+    background-color: black;
+    z-index: 3; }
   header {
     text-align: center; }
   .nav {

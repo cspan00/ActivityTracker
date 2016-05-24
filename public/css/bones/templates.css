@@ -3,6 +3,14 @@
   width: 1200px;
   margin: auto; }
 
+@media (max-width: 1250px) {
+  .templates {
+    width: 950px; } }
+
+@media (max-width: 1000px) {
+  .templates {
+    width: 600px; } }
+
 @media (max-width: 750px) {
   .templates {
     padding-top: 10em;

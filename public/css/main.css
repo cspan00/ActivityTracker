@@ -8,6 +8,14 @@
   width: 1200px;
   margin: auto; }
 
+@media (max-width: 1250px) {
+  .templates {
+    width: 950px; } }
+
+@media (max-width: 1000px) {
+  .templates {
+    width: 600px; } }
+
 @media (max-width: 750px) {
   .templates {
     padding-top: 10em;
@@ -28,8 +36,7 @@ header {
   width: 1200px;
   margin: auto;
   padding-left: 22px;
-  padding-right: 22px;
-  background-color: skyblue; }
+  padding-right: 22px; }
 
 .logo {
   height: 2em;
@@ -41,6 +48,14 @@ header {
 .mobilefooter {
   display: none; }
 
+@media (max-width: 1250px) {
+  .navcontent {
+    width: 950px; } }
+
+@media (max-width: 1000px) {
+  .navcontent {
+    width: 600px; } }
+
 @media (max-width: 750px) {
   .mobilefooter {
     display: block;
@@ -49,7 +64,8 @@ header {
     left: 0;
     right: 0;
     height: 3em;
-    background-color: red; }
+    background-color: black;
+    z-index: 3; }
   header {
     text-align: center; }
   .nav {
@@ -57,8 +73,10 @@ header {
   .navcontent {
     width: 95%; } }
 
+html {
+  background-color: #E4E4E4; }
+
 .formContainer {
-  background-color: teal;
   margin: auto;
   width: 100%;
   margin-bottom: 28px; }
@@ -68,18 +86,52 @@ header {
   width: 1156px;
   height: 291px;
   margin: auto;
-  background-color: red; }
+  background-color: white; }
 
 .feedContainer {
-  background-color: purple;
   width: 100%; }
 
 .feedPost {
   width: 356px;
   margin: 22px;
-  background-color: tomato;
+  background-color: white;
   overflow: hidden;
   display: inline-block; }
 
+.post-img {
+  max-height: 500px;
+  width: auto; }
+
+@media (max-width: 1250px) {
+  .newPostForm {
+    margin-bottom: 128px;
+    width: 906px;
+    height: 291px; }
+  .feedPost {
+    width: 430px;
+    margin: 22px; } }
+
+@media (max-width: 1000px) {
+  .newPostForm {
+    margin-bottom: 128px;
+    width: 556px; }
+  .feedPost {
+    width: 556px;
+    margin: 22px; } }
+
+@media (max-width: 750px) {
+  .newPostForm {
+    margin-bottom: 128px;
+    width: 100%;
+    height: 291px; }
+  .feedPost {
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    overflow: hidden;
+    display: inline-block; } }
+
 header {
-  background-color: red; }
+  background-color: white; }
