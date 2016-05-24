@@ -1,0 +1,54 @@
+$color: skyblue;
+$speed: 1s;
+$ease: cubic-bezier(0.730, -0.600, 0.465, 1.640);
+$stroke: 3vmin;
+$ripples: 4;
+$alpha: 0.2;
+$size: 20vmin;
+
+.pulsating {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  box-sizing: border-box;
+  height: $size;
+  width: $size;
+  margin: $size / -2;
+  border-radius: 100%;
+  background: $color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: codefights-pulsating $speed $ease infinite;
+  img{
+    height:60%;
+  }
+}
+
+@keyframes codefights-pulsating {
+$from: ();
+$to: ();
+  @for $i from 0 to $ripples {
+    @if $i < $ripples - 1 {
+      $shadow: 0 0 0 ($i * $stroke) rgba($color, $alpha);
+      $from: append($from, $shadow, comma);
+      $shadow: 0 0 0 (($i + 1) * $stroke) rgba($color, $alpha);
+      $to: append($to, $shadow, comma);
+    }
+
+    @else if $i == $ripples - 1 {
+      $shadow: 0 0 0 ($i * $stroke) rgba($color, $alpha);
+      $from: append($from, $shadow, comma);
+      $shadow: 0 0 0 (($i + 1) * $stroke) rgba($color, 0);
+      $to: append($to, $shadow, comma);
+    }
+  }
+
+  0% {
+    box-shadow: $from;
+  }
+
+  100% {
+    box-shadow: $to;
+  }
+}
