@@ -6,12 +6,8 @@ exports.up = function(knex, Promise) {
    t.string('author_pic');
    t.string('author');
    t.string('title');
-   t.string('address');
-   t.string('lat');
-   t.string('lng');
-   t.string('child_name');
+   t.string('kids');
    t.text('picture_url');
-   t.text('public_id');
    t.text('description');
    t.float('hours');
    t.string('time');

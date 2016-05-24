@@ -79,7 +79,9 @@ html {
 .formContainer {
   margin: auto;
   width: 100%;
-  margin-bottom: 28px; }
+  margin-bottom: 28px;
+  display: inline-block;
+ }
 
 .newPostForm {
   margin-bottom: 128px;
