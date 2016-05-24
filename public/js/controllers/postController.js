@@ -1,5 +1,23 @@
-
 app.controller("postController", function($scope, $http, $auth, posts, $location, $route){
+
+
+
+  // vanilla JS
+// init with element
+var grid = document.querySelector('.grid');
+var msnry = new Masonry( grid, {
+  // options...
+  itemSelector: '.grid-item',
+  columnWidth: 200
+});
+
+// init with selector
+var msnry = new Masonry( '.grid', {
+  // options...
+});
+
+
+
   posts.getPosts().then(function(response){
     $scope.posts = response;
     $scope.time = response[0].created_at;

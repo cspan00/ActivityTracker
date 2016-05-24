@@ -1,0 +1,23 @@
+.formContainer {
+  background-color: teal;
+  margin: auto;
+  width: 100%;
+  margin-bottom: 28px; }
+
+.newPostForm {
+  margin-bottom: 128px;
+  width: 1156px;
+  height: 291px;
+  margin: auto;
+  background-color: red; }
+
+.feedContainer {
+  background-color: purple;
+  width: 100%; }
+
+.feedPost {
+  width: 356px;
+  margin: 22px;
+  background-color: tomato;
+  overflow: hidden;
+  display: inline-block; }

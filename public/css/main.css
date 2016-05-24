@@ -1,2 +1,85 @@
-html {
-  background-color: tomato !important; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+.templates {
+  padding-top: 10em;
+  width: 1200px;
+  margin: auto; }
+
+@media (max-width: 750px) {
+  .templates {
+    padding-top: 10em;
+    padding-bottom: 5em;
+    width: 95%;
+    margin: auto; } }
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  z-index: 3; }
+
+.navcontent {
+  width: 1200px;
+  margin: auto;
+  padding-left: 22px;
+  padding-right: 22px;
+  background-color: skyblue; }
+
+.logo {
+  height: 2em;
+  width: auto; }
+
+.nav {
+  float: right; }
+
+.mobilefooter {
+  display: none; }
+
+@media (max-width: 750px) {
+  .mobilefooter {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3em;
+    background-color: red; }
+  header {
+    text-align: center; }
+  .nav {
+    display: none; }
+  .navcontent {
+    width: 95%; } }
+
+.formContainer {
+  background-color: teal;
+  margin: auto;
+  width: 100%;
+  margin-bottom: 28px; }
+
+.newPostForm {
+  margin-bottom: 128px;
+  width: 1156px;
+  height: 291px;
+  margin: auto;
+  background-color: red; }
+
+.feedContainer {
+  background-color: purple;
+  width: 100%; }
+
+.feedPost {
+  width: 356px;
+  margin: 22px;
+  background-color: tomato;
+  overflow: hidden;
+  display: inline-block; }
+
+header {
+  background-color: red; }

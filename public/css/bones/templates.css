@@ -1,0 +1,11 @@
+.templates {
+  padding-top: 10em;
+  width: 1200px;
+  margin: auto; }
+
+@media (max-width: 750px) {
+  .templates {
+    padding-top: 10em;
+    padding-bottom: 5em;
+    width: 95%;
+    margin: auto; } }

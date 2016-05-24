@@ -1,0 +1,41 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  z-index: 3; }
+
+.navcontent {
+  width: 1200px;
+  margin: auto;
+  padding-left: 22px;
+  padding-right: 22px;
+  background-color: skyblue; }
+
+.logo {
+  height: 2em;
+  width: auto; }
+
+.nav {
+  float: right; }
+
+.mobilefooter {
+  display: none; }
+
+@media (max-width: 750px) {
+  .mobilefooter {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3em;
+    background-color: red; }
+  header {
+    text-align: center; }
+  .nav {
+    display: none; }
+  .navcontent {
+    width: 95%; } }

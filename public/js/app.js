@@ -1,4 +1,4 @@
-var app = angular.module("myApp", ['ngRoute', 'ngResource', 'satellizer', 'angularMoment']);
+var app = angular.module("myApp", ['ngRoute', 'ngResource', 'satellizer', 'angularMoment', 'wu.masonry']);
 
 
 //satellizer oauth config.  This connects facebook oauth to our application.
@@ -24,7 +24,7 @@ app.config(function ($routeProvider, $authProvider) {
    controller: 'mainController'
  })
  .when('/feed',{
-   templateUrl: 'partials/post/index.html',
+   templateUrl: 'partials/post/index-new.html',
    controller: 'postController'
  })
  .when('/posts/:id',{

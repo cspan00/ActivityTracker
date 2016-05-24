@@ -1,0 +1,36 @@
+
+
+<div class="formContainer">
+  <div class="newPostForm"></div>
+</div>
+
+
+<!-- <div class="feedContainer">
+  <div class="feedPost container" ng-repeat = "post in posts | orderBy: 'id' : 'reverse'">
+
+        <img src="{{post.author_pic}}">
+        <a href = "/#/user/{{post.facebook_id}}"><h3>{{post.author}}</h3></a>
+        <h5>{{post.time | amCalendar}}</h5>
+        <h3>{{post.title}}</h3>
+        <h2>{{post.hours}}</h2>
+        <img src="{{post.picture_url}}">
+        <p>{{post.description}}</p>
+
+    </div>
+  </div> -->
+
+<div class="feedContainer">
+
+  <div masonry column-width="200">
+      <div class="masonry-brick feedPost container" ng-repeat="post in posts">
+        <img src="{{post.author_pic}}">
+        <a href = "/#/user/{{post.facebook_id}}"><h3>{{post.author}}</h3></a>
+        <h5>{{post.time | amCalendar}}</h5>
+        <h3>{{post.title}}</h3>
+        <h2>{{post.hours}}</h2>
+        <img src="{{post.picture_url}}">
+        <p>{{post.description}}</p>
+      </div>
+  </div>
+
+</div>
