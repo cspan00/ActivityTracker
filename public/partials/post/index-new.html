@@ -71,7 +71,7 @@
       <br>
       <textarea rows='4' class='form-control' type="text" name="description" ng-model="description" placeholder = "Description" required></textarea>
       <div ng-repeat = "kid in kids">
-        <label><input type = "checkbox" value = "{{kid.kid_name}}">{{kid.kid_name}}</label><br>
+        <label><input type = "checkbox" name = "kids" value = "{{kid.id}}">{{kid.kid_name}}</label><br>
       </div>
       <h3>Photo Upload</h3>
       <input type="file" name="file" required>

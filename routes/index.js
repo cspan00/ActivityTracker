@@ -132,6 +132,17 @@ Users().where('facebook_id', req.body.facebook_id).first().then(function(result)
   Users().where('facebook_id', result.facebook_id).update('total_hours', new_hours).then(function(result){
   })
 })
+req.body.kids.forEach(function(elem, i){
+  Kids().where('id', elem).first().then(function(result){
+    var old_kid_hours = result.total_hours;
+    var kid_hours = req.body.hours;
+    var new_hours = parseFloat(old_kid_hours) + parseFloat(kid_hours);
+      Kids().where('id', result.id).update('total_hours', new_hours).then(function(result){
+        res.send(200)
+      })
+  })
+})
+
 Posts().insert(post).then(function(result){
   res.redirect('/#/feed')
 })
@@ -206,9 +217,11 @@ router.post('/new/kid', upload.single('file'), function (req, res, next){
     kid.kid_pic = result.secure_url;
     kid.kid_name = req.body.kid_name;
     kid.facebook_id = req.body.facebook_id;
+    kid.total_hours = req.body.total_hours;
     Kids().insert(kid).then(function(result){
       res.redirect('/#/profile')
     })
+    fs.unlink('./'+req.file.filename)
   })
 })
 
