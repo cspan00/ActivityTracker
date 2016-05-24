@@ -5,6 +5,7 @@ exports.up = function(knex, Promise) {
    t.string('facebook_id');
    t.string('kid_name');
    t.text('kid_pic');
+   t.float('total_hours')
  })
 };
 
