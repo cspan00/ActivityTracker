@@ -111,17 +111,21 @@ router.post('/new/post', upload.single('file'), function(req, res, next){
 console.log(req.body);
 cloudinary.uploader.upload(req.file.filename, function(result) {
 var post ={}
+var kids = "";
+req.body.kids.forEach(function(elem){
+  console.log(elem);
+  kids.concat(elem+", ")
+})
 post.facebook_id = req.body.facebook_id
 post.author = req.body.author
 post.author_pic = req.body.author_pic
 post.title = req.body.title
 post.author = req.body.author
-post.address = req.body.location
 post.description = req.body.description
 post.picture_url = result.secure_url
-post.public_id = result.public_id;
 post.hours = req.body.hours
 post.time = new Date();
+post.kids = kids;
 
 //update total number of hours for user when they make a post
 //does math to calculate total hours for user.
