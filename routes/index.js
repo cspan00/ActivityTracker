@@ -114,7 +114,7 @@ var post ={}
 var kids = "";
 req.body.kids.forEach(function(elem){
   console.log(elem);
-  kids.concat(elem+", ")
+  kidsgit .concat(elem+", ")
 })
 post.facebook_id = req.body.facebook_id
 post.author = req.body.author
