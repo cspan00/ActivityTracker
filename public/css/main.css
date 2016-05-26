@@ -163,3 +163,15 @@ header {
     box-shadow: 0 0 0 0vmin rgba(135, 206, 235, 0.2), 0 0 0 3vmin rgba(135, 206, 235, 0.2), 0 0 0 6vmin rgba(135, 206, 235, 0.2), 0 0 0 9vmin rgba(135, 206, 235, 0.2); }
   100% {
     box-shadow: 0 0 0 3vmin rgba(135, 206, 235, 0.2), 0 0 0 6vmin rgba(135, 206, 235, 0.2), 0 0 0 9vmin rgba(135, 206, 235, 0.2), 0 0 0 12vmin rgba(135, 206, 235, 0); } }
+
+
+.kidLeaderContainer{
+  border: 1px solid black;
+  display: block;
+
+
+}
+.kidLeaderPic{
+  height: 50px;
+
+}

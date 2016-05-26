@@ -3,6 +3,9 @@
 
 
 <div ng-repeat = "kid in kids | orderBy: '-total_hours'">
-  <p> {{kid.kid_name}} </p>
-  <p> {{kid.total_hours}} </p>
-</div>
+  <div class = "kidLeaderContainer">
+    <p> Name : <h3> {{kid.kid_name}} </h3></p>
+    <p> Hours Outside : <h3>{{kid.total_hours}} </h3> </p>
+    <img class = "kidLeaderPic" src="{{kid.kid_pic}}">
+  </div>
+</div
