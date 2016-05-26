@@ -158,8 +158,8 @@ else{
 }
 
 Posts().insert(post).then(function(result){
-  res.redirect('/#/feed')
   fs.unlink('./'+req.file.filename)
+  res.redirect('/#/feed')
 })
 })
 })
