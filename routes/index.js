@@ -171,11 +171,7 @@ router.post('/getposts', function(req, res, next){
     })
   })
 
-router.get('/dsflksldkjf23423lkdjfvVVslkdjflslss', function(req, res){
-  Users().select().then(function(response){
-    res.json(response);
-  })
-})
+
 
 router.post('/post/edit', function (req, res, next) {
   Posts().where("id", req.body.postId).update({
