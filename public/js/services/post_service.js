@@ -59,10 +59,16 @@ app.service('posts', function($http){
       })
       }
 
-    this.getKids = function(facebook_id){
+    this.getKidsByFBId = function(facebook_id){
       return $http.get('/kids/'+facebook_id).then(function(response){
         return response.data;
       })
     }
+    this.getAllKids = function(){
+      return $http.get('/kids').then(function(response){
+        return response.data;
+      })
+    }
+
 
 })

@@ -48,8 +48,8 @@ $scope.hoursMinus = function(){
     $scope.author_picture = result.profile_image_url
     $scope.author_name = result.name
     $scope.facebook_id = result.facebook_id
-      posts.getKids(result.facebook_id).then(function(result){
-        $scope.kids = result; 
+      posts.getKidsbyFBId(result.facebook_id).then(function(result){
+        $scope.kids = result;
       })
 
 

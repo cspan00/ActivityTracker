@@ -35,6 +35,7 @@ function Kids(){
 
 
 
+
 function createToken(user){
   return jwt.sign(user, process.env.TOKEN_SECRET)
 }
@@ -122,6 +123,10 @@ post.description = req.body.description
 post.picture_url = result.secure_url
 post.hours = req.body.hours
 post.time = new Date();
+post.kid_1 = req.body.kids[0]
+post.kid_2 = req.body.kids[1]
+post.kid_3 = req.body.kids[2]
+post.kid_4 = req.body.kids[3]
 
 
 //update total number of hours for user when they make a post
@@ -240,5 +245,12 @@ router.get('/kids/:id', function(req, res, next){
     res.send(response)
   })
 });
+
+router.get('/kids', function(req,res,next){
+  Kids().then(function(response){
+    res.send(response)
+  })
+})
+
 
 module.exports = router;

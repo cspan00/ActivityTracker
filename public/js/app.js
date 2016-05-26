@@ -79,9 +79,9 @@ app.config(function ($routeProvider, $authProvider) {
   templateUrl: 'partials/admin.html',
   controller: 'postController'
 })
-.when('/scoreboard', {
+.when('/leaderboard', {
   templateUrl: 'partials/scoreboard.html',
-  controller: 'postController'
+  controller: 'leaderBoardController'
 })
 
 

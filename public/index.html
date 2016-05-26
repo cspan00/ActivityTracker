@@ -62,8 +62,7 @@
               <a ng-show="!user.session" href="/#/login">Sign In</a>
               <a ng-show="user.session" href="/#/home" ng-click="logout()">Logout</a>
               <a ng-show="user.session" href="/#/profile" >Profile</a>
-              <a ng-show='isAdmin' href="/#/admin">Admin</a>
-              <a ng-show="user.session" class='addLi' class='add' href="/#/newpost">&#43 Add Activity</a>
+              <a ng-show="user.session" href="/#/leaderboard">Leaderboard</a>
 
           </div><!--/.nav-collapse -->
           </div>
@@ -138,6 +137,7 @@
    <script type="text/javascript" src="js/controllers/profileController.js"></script>
    <script type="text/javascript" src="js/controllers/newController.js"></script>
    <script type="text/javascript" src="js/controllers/navController.js"></script>
+   <script type="text/javascript" src="js/controllers/leaderBoardController.js"></script>
    <script type="text/javascript" src="js/controllers/profileShowController.js"></script>
    <script type="text/javascript" src="js/controllers/editController.js"></script>
    <script type="text/javascript" src="js/services/post_service.js"></script>
