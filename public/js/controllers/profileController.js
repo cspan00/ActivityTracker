@@ -7,7 +7,7 @@ app.controller("profileController", function($scope, $http, posts, $location, $r
         $scope.posts = result;
         console.log($scope.posts);
     })
-    posts.getKids(result.facebook_id).then(function(result){
+    posts.getKidsbyFBId(result.facebook_id).then(function(result){
       console.log(result);
       $scope.kids = result
     })
