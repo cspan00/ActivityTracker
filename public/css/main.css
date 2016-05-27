@@ -3,6 +3,36 @@
   margin: 0;
   padding: 0; }
 
+@font-face {
+  font-family: 'BrandonGrotesque-Light';
+  src: url("../fonts/BrandonGrotesque-Light.woff") format("woff"); }
+
+@font-face {
+  font-family: 'BrandonGrotesque-Medium';
+  src: url("../fonts/BrandonGrotesque-Medium.woff") format("woff"); }
+
+a, p {
+  font-family: 'BrandonGrotesque-Light', Fallback, sans-serif;
+  color: #717171; }
+
+a {
+  font-size: 0.7em;
+  text-decoration: none;
+  color: blue; }
+
+p {
+  line-height: 1.8em;
+  font-size: 0.8em; }
+
+h1, h2, h3, h4, h5 {
+  font-family: 'BrandonGrotesque-Medium', Fallback, sans-serif;
+  color: #717171;
+  letter-spacing: 0.05em; }
+
+h1 {
+  font-size: 1.5em;
+  color: #717171; }
+
 .templates {
   padding-top: 10em;
   width: 1200px;
@@ -79,9 +109,7 @@ html {
 .formContainer {
   margin: auto;
   width: 100%;
-  margin-bottom: 28px;
-  display: inline-block;
- }
+  margin-bottom: 28px; }
 
 .newPostForm {
   margin-bottom: 128px;
@@ -101,11 +129,32 @@ html {
   display: inline-block; }
 
 .post-img {
-  height: 250px;
-  width: auto; }
+  height: 15em;
+  width: 100%; }
 
 .post-content {
-  background-color: skyblue; }
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em; }
+
+.points {
+  float: right;
+  font-size: 0.6em; }
+
+.pointsicon {
+  margin-right: 0.5em; }
+
+.title {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em; }
+
+.bottom {
+  background-color: #F4F4F4;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 0.75em;
+  padding-bottom: 0.75em; }
 
 @media (max-width: 1250px) {
   .newPostForm {
@@ -163,15 +212,3 @@ header {
     box-shadow: 0 0 0 0vmin rgba(135, 206, 235, 0.2), 0 0 0 3vmin rgba(135, 206, 235, 0.2), 0 0 0 6vmin rgba(135, 206, 235, 0.2), 0 0 0 9vmin rgba(135, 206, 235, 0.2); }
   100% {
     box-shadow: 0 0 0 3vmin rgba(135, 206, 235, 0.2), 0 0 0 6vmin rgba(135, 206, 235, 0.2), 0 0 0 9vmin rgba(135, 206, 235, 0.2), 0 0 0 12vmin rgba(135, 206, 235, 0); } }
-
-
-.kidLeaderContainer{
-  border: 1px solid black;
-  display: block;
-
-
-}
-.kidLeaderPic{
-  height: 50px;
-
-}

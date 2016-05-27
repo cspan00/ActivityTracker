@@ -21,11 +21,32 @@
   display: inline-block; }
 
 .post-img {
-  height: 250px;
-  width: auto; }
+  height: 15em;
+  width: 100%; }
 
 .post-content {
-  background-color: skyblue; }
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em; }
+
+.points {
+  float: right;
+  font-size: 0.6em; }
+
+.pointsicon {
+  margin-right: 0.5em; }
+
+.title {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em; }
+
+.bottom {
+  background-color: #F4F4F4;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 0.75em;
+  padding-bottom: 0.75em; }
 
 @media (max-width: 1250px) {
   .newPostForm {
