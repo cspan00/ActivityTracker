@@ -48,7 +48,7 @@ app.config(function ($routeProvider, $authProvider) {
   controller: 'profileController'
 })
  .when('/profile',{
-  templateUrl: 'partials/profile/show.html',
+  templateUrl: 'partials/profile/show-new.html',
   controller: 'profileController'
 })
  .when('/user/:id', {
@@ -71,7 +71,7 @@ app.config(function ($routeProvider, $authProvider) {
   controller: 'mainController'
 })
 .when('/profile',{
-  templateUrl: 'partials/profile/show.html',
+  templateUrl: 'partials/profile/show-new.html',
   controller: 'profileController'
 })
 
