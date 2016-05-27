@@ -111,7 +111,6 @@ router.get('/user/:id', function(req, res, next){
 
 //Adding posts
 router.post('/new/post', upload.single('file'), function(req, res, next){
-console.log(req.body);
 cloudinary.uploader.upload(req.file.filename, function(result) {
 var post ={}
 post.facebook_id = req.body.facebook_id
@@ -123,10 +122,9 @@ post.description = req.body.description
 post.picture_url = result.secure_url
 post.hours = req.body.hours
 post.time = new Date();
-post.kid_1 = req.body.kids[0]
-post.kid_2 = req.body.kids[1]
-post.kid_3 = req.body.kids[2]
-post.kid_4 = req.body.kids[3]
+
+
+
 
 
 //update total number of hours for user when they make a post
@@ -138,7 +136,7 @@ Users().where('facebook_id', req.body.facebook_id).first().then(function(result)
   Users().where('facebook_id', result.facebook_id).update('total_hours', new_hours).then(function(result){
   })
 })
-// check to see if more than one kid is selected then update total hours accordingly.
+// check to see if more than one kid is selected then update total hours for each kid accordingly.
 if(req.body.kids.isArray === true){
 req.body.kids.forEach(function(elem, i){
   Kids().where('id', elem).first().then(function(result){
@@ -146,7 +144,6 @@ req.body.kids.forEach(function(elem, i){
     var kid_hours = req.body.hours;
     var new_hours = parseFloat(old_kid_hours) + parseFloat(kid_hours);
       Kids().where('id', result.id).update('total_hours', new_hours).then(function(result){
-        res.send(200)
       })
   })
 })
@@ -157,16 +154,19 @@ else{
     var kid_hours = req.body.hours;
     var new_hours = parseFloat(old_kid_hours) + parseFloat(kid_hours);
       Kids().where('id', result.id).update('total_hours', new_hours).then(function(result){
-        res.send(200)
+
       })
   })
 }
 
 Posts().insert(post).then(function(result){
-  fs.unlink('./'+req.file.filename)
+
+
   res.redirect('/#/feed')
 })
-})
+
+    fs.unlink('./'+req.file.filename)
+  })
 })
 
 //Show posts on the profile for user you have selected.
@@ -194,18 +194,9 @@ router.get('/post/:id', function(req, res, next){
     res.send(response);
     })
 })
-router.get('/post/:id/comments', function(req,res, next){
-  Comments().where('post_id', req.params.id).then(function(response){
-    res.send(response);
-    })
-})
 
-router.post('/post/:id/comments', function(req, res, next){
-  console.log(req.body);
-  Comments().insert(req.body).then(function(response){
-    res.status(200)
-  })
-})
+
+
 // Deletes post and subtracts hours from users total score
 router.get('/post/:id/delete', function (req, res, next) {
   var hours;
