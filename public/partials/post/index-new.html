@@ -111,10 +111,12 @@
             <a class="author" href = "/#/user/{{post.facebook_id}}">{{post.author}}</a>
             <p class="points"><img class="pointsicon"src="../../img/logo.png"/>{{post.hours}}</p>
             <h1 class="title">{{post.title}}</h1>
-            <p class="description">{{post.description}}</p>
+            <p class="description" contenteditable="true">{{post.description}}</p>
         </div>
         <div class="bottom">
         <p>{{post.time | amCalendar}}</p>
+        <p class="edit"><a href="/#/posts/{{post.id}}/edit" ng-show="post.facebook_id == user" >Edit</a></p>
+        <p class="edit"><a href='/#/feed' ng-click = "deletePost()" ng-show="post.facebook_id == user" >Delete</a></p>
       </div>
       </div>
   </div>
