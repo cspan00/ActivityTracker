@@ -11,7 +11,7 @@
   font-family: 'BrandonGrotesque-Medium';
   src: url("../fonts/BrandonGrotesque-Medium.woff") format("woff"); }
 
-a, p {
+a, p, textarea {
   font-family: 'BrandonGrotesque-Light', Fallback, sans-serif;
   color: #717171; }
 
@@ -23,6 +23,10 @@ a {
 p {
   line-height: 1.8em;
   font-size: 0.8em; }
+
+textarea {
+  line-height: 1.8em;
+  font-size: 1em; }
 
 h1, h2, h3, h4, h5 {
   font-family: 'BrandonGrotesque-Medium', Fallback, sans-serif;
@@ -292,6 +296,70 @@ html {
     position: static;
     padding-left: 0;
     padding-right: 0; } }
+
+.form-title {
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  width: 100%; }
+  .form-title input {
+    width: 100%; }
+
+.form-body {
+  width: 100%;
+  height: 12em;
+  padding-left: 1em;
+  padding-right: 1em; }
+
+.form-footer {
+  width: 100%;
+  background-color: grey;
+  height: 3em;
+  display: inline-flex; }
+  .form-footer input {
+    padding: 1em;
+    background-color: grey; }
+
+textarea {
+  border: none;
+  outline: none;
+  width: 100%;
+  resize: none;
+  height: 100%; }
+
+input {
+  outline: none;
+  border: none; }
+
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1; }
+
+button {
+  flex-grow: 1;
+  outline: none;
+  border: none;
+  height: 3em;
+  padding: 0.5em;
+  background-color: skyblue; }
+  button h5 {
+    font-size: 0.8em;
+    letter-spacing: 0.2em; }
+
+select {
+  flex-grow: 1;
+  outline: none;
+  border: none;
+  height: 3em;
+  padding: 0.5em;
+  background-color: teal;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px; }
 
 header {
   background-color: white; }
