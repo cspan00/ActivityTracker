@@ -52,7 +52,7 @@ app.config(function ($routeProvider, $authProvider) {
   controller: 'profileController'
 })
  .when('/user/:id', {
-   templateUrl: 'partials/profile/show-new.html',
+   templateUrl: 'partials/profile/show-new-2.html',
    controller: 'profileShowController'
  })
 
