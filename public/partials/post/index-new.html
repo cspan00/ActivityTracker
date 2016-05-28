@@ -2,7 +2,7 @@
 
 <div class="formContainer">
   <div class="newPostForm">
-  <form method="POST" action="/new/post" enctype="multipart/form-data">
+  <form method="POST" action="/new/post" enctype="multipart/for morrinm-data">
     <label for="postTitle">Name your Activity</label>
     <br>
     <input class='form-control titleInput' type="text" name="title" ng-model="title" required>
@@ -115,8 +115,8 @@
         </div>
         <div class="bottom">
         <p>{{post.time | amCalendar}}</p>
-        <p class="edit"><a href="/#/posts/{{post.id}}/edit" ng-show="post.facebook_id == user" >Edit</a></p>
-        <p class="edit"><a href='/#/feed' ng-click = "deletePost()" ng-show="post.facebook_id == user" >Delete</a></p>
+        <!-- <p class="edit"><a href="/#/posts/{{post.id}}/edit" ng-show="post.facebook_id == user" >Edit</a></p>
+        <p class="edit"><a href='/#/feed' ng-click = "deletePost()" ng-show="post.facebook_id == user" >Delete</a></p> -->
       </div>
       </div>
   </div>
