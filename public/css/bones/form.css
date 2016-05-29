@@ -17,10 +17,16 @@
   width: 100%;
   background-color: grey;
   height: 3em;
-  display: inline-flex; }
+  display: none; }
   .form-footer input {
     padding: 1em;
     background-color: grey; }
+
+.flex1 {
+  flex-grow: 1; }
+
+.flex2 {
+  flex-grow: 2; }
 
 textarea {
   border: none;

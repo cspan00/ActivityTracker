@@ -52,16 +52,35 @@ header{
     left: 0;
     right:0;
     height:3em;
-    background-color: black;
     z-index: 3;
+
   }
   header{
     text-align: center;
+    img{
+      margin: auto;
+    }
   }
   .nav{
     display: none;
   }
   .navcontent{
-    width: 95%;
+    width: 100%;
+    display: flex;
+    padding: 0;
+    margin: auto;
+    a{
+      background-color:white;
+      padding: 1.5em;
+      height: 100%;
+      flex-grow: 1;
+    }
   }
+}
+
+
+
+.currentmobile{
+  border-top: 2px solid black;
+  color: orange;
 }

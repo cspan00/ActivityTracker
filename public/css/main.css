@@ -53,7 +53,7 @@ h1 {
 @media (max-width: 650px) {
   .templates {
     padding-top: 5em;
-    padding-bottom: 5em;
+    padding-bottom: 10em;
     width: 95%;
     margin: auto; } }
 
@@ -98,14 +98,27 @@ header {
     left: 0;
     right: 0;
     height: 3em;
-    background-color: black;
     z-index: 3; }
   header {
     text-align: center; }
+    header img {
+      margin: auto; }
   .nav {
     display: none; }
   .navcontent {
-    width: 95%; } }
+    width: 100%;
+    display: flex;
+    padding: 0;
+    margin: auto; }
+    .navcontent a {
+      background-color: white;
+      padding: 1.5em;
+      height: 100%;
+      flex-grow: 1; } }
+
+.currentmobile {
+  border-top: 2px solid black;
+  color: orange; }
 
 html {
   background-color: #E4E4E4; }
@@ -316,10 +329,16 @@ html {
   width: 100%;
   background-color: grey;
   height: 3em;
-  display: inline-flex; }
+  display: none; }
   .form-footer input {
     padding: 1em;
     background-color: grey; }
+
+.flex1 {
+  flex-grow: 1; }
+
+.flex2 {
+  flex-grow: 2; }
 
 textarea {
   border: none;
