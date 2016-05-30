@@ -329,16 +329,45 @@ html {
   width: 100%;
   background-color: grey;
   height: 3em;
-  display: none; }
-  .form-footer input {
-    padding: 1em;
-    background-color: grey; }
+  display: flex;
+  justify-content: flex-end; }
 
-.flex1 {
-  flex-grow: 1; }
-
-.flex2 {
-  flex-grow: 2; }
+.formelement {
+  height: 3em;
+  flex-flow: row; }
+  .formelement input {
+    height: 100%;
+    padding: 1em; }
+  .formelement button {
+    height: 100%;
+    margin: 0; }
+  .formelement select {
+    height: 100%;
+    padding: 1em; }
+  .formelement .submit {
+    width: 10em;
+    background-color: red; }
+  .formelement .image {
+    width: 5em;
+    background-color: purple; }
+  .formelement .minus {
+    background-color: red;
+    width: 3em; }
+  .formelement .hours {
+    background-color: teal;
+    width: 3em; }
+  .formelement .add {
+    background-color: green;
+    width: 3em; }
+  .formelement .city {
+    background-color: pink;
+    width: 10em; }
+  .formelement .state {
+    background-color: orange;
+    width: 10em; }
+  .formelement .kid {
+    background-color: skyblue;
+    width: 10em; }
 
 textarea {
   border: none;
@@ -360,22 +389,16 @@ input {
   z-index: -1; }
 
 button {
-  flex-grow: 1;
   outline: none;
   border: none;
-  height: 3em;
-  padding: 0.5em;
   background-color: skyblue; }
   button h5 {
     font-size: 0.8em;
     letter-spacing: 0.2em; }
 
 select {
-  flex-grow: 1;
   outline: none;
   border: none;
-  height: 3em;
-  padding: 0.5em;
   background-color: teal;
   -webkit-appearance: none;
   -webkit-border-radius: 0px; }

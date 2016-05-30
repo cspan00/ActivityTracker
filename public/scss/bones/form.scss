@@ -18,19 +18,58 @@
   width: 100%;
   background-color: grey;
   height: 3em;
-  // display: inline-flex;
-  display: none;
+  display: flex;
+  justify-content: flex-end;
+}
+.formelement{
+  height: 3em;
+  flex-flow: row;
   input{
+    height: 100%;
     padding:1em;
-    background-color: grey;
+  }
+  button{
+    height: 100%;
+    margin: 0;
+  }
+  select{
+    height: 100%;
+    padding: 1em;
+  }
+  .submit{
+    width: 10em;
+    background-color: red;
+  }
+  .image{
+    width: 5em;
+    background-color: purple;
+  }
+  .minus{
+    background-color: red;
+    width: 3em;
+  }
+  .hours{
+    background-color: teal;
+    width: 3em;
+  }
+  .add{
+    background-color: green;
+    width: 3em;
+  }
+  .city{
+    background-color: pink;
+    width: 10em;
+  }
+  .state{
+    background-color: orange;
+    width:10em;
+  }
+  .kid{
+    background-color: skyblue;
+    width:10em;
   }
 }
-.flex1{
-  flex-grow: 1;
-}
-.flex2{
-  flex-grow: 2;
-}
+
 textarea{
   border: none;
   outline: none;
@@ -51,11 +90,8 @@ input{
 	z-index: -1;
 }
 button{
-  flex-grow: 1;
   outline: none;
   border: none;
-  height: 3em;
-  padding:0.5em;
   background-color: skyblue;
   h5{
     font-size: 0.8em;
@@ -63,11 +99,8 @@ button{
   }
 }
 select{
-  flex-grow: 1;
   outline: none;
   border: none;
-  height: 3em;
-  padding:0.5em;
   background-color: teal;
   -webkit-appearance: none;
     -webkit-border-radius: 0px;
