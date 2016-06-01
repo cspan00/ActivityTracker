@@ -14,6 +14,7 @@ exports.up = function(knex, Promise) {
    t.text('description');
    t.float('hours');
    t.string('time');
+   t.string('location');
 
  })
 };
