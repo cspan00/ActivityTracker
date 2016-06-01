@@ -143,7 +143,6 @@ router.post('/new/post', upload.single('file'), function(req, res, next){
         var kid_hours = req.body.hours;
         var new_hours = parseFloat(old_kid_hours) + parseFloat(kid_hours);
           Kids().where('id', result.id).update('total_hours', new_hours).then(function(result){
-            res.send(200)
           })
       })
     })
@@ -154,7 +153,6 @@ router.post('/new/post', upload.single('file'), function(req, res, next){
       var kid_hours = req.body.hours;
       var new_hours = parseFloat(old_kid_hours) + parseFloat(kid_hours);
         Kids().where('id', result.id).update('total_hours', new_hours).then(function(result){
-          res.send(200)
         })
     })
   }
@@ -162,6 +160,8 @@ router.post('/new/post', upload.single('file'), function(req, res, next){
   Posts().insert(post).then(function(result){
       res.redirect('/#/feed')
     })
+    console.log("&&&&&& FILENAME &&&&&&&");
+    console.log(req.file.filename);
     fs.unlink('./'+req.file.filename)
  })
 })
