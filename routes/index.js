@@ -123,6 +123,7 @@ router.post('/new/post', upload.single('file'), function(req, res, next){
   post.picture_url = result.secure_url
   post.hours = req.body.hours
   post.time = new Date();
+  post.location = req.body.city + "," + req.body.state
 
 
 

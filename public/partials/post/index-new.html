@@ -14,10 +14,10 @@
     </div>
     <div class="form-footer">
       <div class="formelement">
-        <input class='form-control cityInput city' type="text" name="location" placeholder="City" ng-model="location" required>
+        <input class='form-control cityInput city' type="text" name="city" placeholder="City" ng-model="location" required>
       </div>
     <div class="formelement">
-      <select class="form-control stateSelect state" name="">
+      <select class="form-control stateSelect state" name="state">
         <option value="AL">Alabama</option>
         <option value="AK">Alaska</option>
         <option value="AZ">Arizona</option>
@@ -148,6 +148,7 @@
             <p class="description" contenteditable="true">{{post.description}}</p>
         </div>
         <div class="bottom">
+        <p> {{post.location}} </p>
         <p>{{post.time | amCalendar}}</p>
         <!-- <p class="edit"><a href="/#/posts/{{post.id}}/edit" ng-show="post.facebook_id == user" >Edit</a></p>
         <p class="edit"><a href='/#/feed' ng-click = "deletePost()" ng-show="post.facebook_id == user" >Delete</a></p> -->
