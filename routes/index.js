@@ -111,59 +111,59 @@ router.get('/user/:id', function(req, res, next){
 
 //Adding posts
 router.post('/new/post', upload.single('file'), function(req, res, next){
-console.log(req.body);
-cloudinary.uploader.upload(req.file.filename, function(result) {
-var post ={}
-post.facebook_id = req.body.facebook_id
-post.author = req.body.author
-post.author_pic = req.body.author_pic
-post.title = req.body.title
-post.author = req.body.author
-post.description = req.body.description
-post.picture_url = result.secure_url
-post.hours = req.body.hours
-post.time = new Date();
+  console.log(req.body);
+  cloudinary.uploader.upload(req.file.filename, function(result) {
+  var post ={}
+  post.facebook_id = req.body.facebook_id
+  post.author = req.body.author
+  post.author_pic = req.body.author_pic
+  post.title = req.body.title
+  post.author = req.body.author
+  post.description = req.body.description
+  post.picture_url = result.secure_url
+  post.hours = req.body.hours
+  post.time = new Date();
 
 
 
-//update total number of hours for user when they make a post
-//does math to calculate total hours for user.
-Users().where('facebook_id', req.body.facebook_id).first().then(function(result){
-  var old_hours = result.total_hours;
-  var hours = req.body.hours;
-  var new_hours = parseFloat(old_hours) + parseFloat(hours);
-  Users().where('facebook_id', result.facebook_id).update('total_hours', new_hours).then(function(result){
+  //update total number of hours for user when they make a post
+  //does math to calculate total hours for user.
+  Users().where('facebook_id', req.body.facebook_id).first().then(function(result){
+    var old_hours = result.total_hours;
+    var hours = req.body.hours;
+    var new_hours = parseFloat(old_hours) + parseFloat(hours);
+    Users().where('facebook_id', result.facebook_id).update('total_hours', new_hours).then(function(result){
+    })
   })
-})
-// check to see if more than one kid is selected then update total hours accordingly.
-if(req.body.kids.isArray === true){
-req.body.kids.forEach(function(elem, i){
-  Kids().where('id', elem).first().then(function(result){
-    var old_kid_hours = result.total_hours;
-    var kid_hours = req.body.hours;
-    var new_hours = parseFloat(old_kid_hours) + parseFloat(kid_hours);
-      Kids().where('id', result.id).update('total_hours', new_hours).then(function(result){
-        res.send(200)
+  // check to see if more than one kid is selected then update total hours accordingly.
+  if(req.body.kids.isArray === true){
+    req.body.kids.forEach(function(elem, i){
+      Kids().where('id', elem).first().then(function(result){
+        var old_kid_hours = result.total_hours;
+        var kid_hours = req.body.hours;
+        var new_hours = parseFloat(old_kid_hours) + parseFloat(kid_hours);
+          Kids().where('id', result.id).update('total_hours', new_hours).then(function(result){
+            res.send(200)
+          })
       })
-  })
-})
-}
-else{
-  Kids().where('id', req.body.kids).first().then(function(result){
-    var old_kid_hours = result.total_hours;
-    var kid_hours = req.body.hours;
-    var new_hours = parseFloat(old_kid_hours) + parseFloat(kid_hours);
-      Kids().where('id', result.id).update('total_hours', new_hours).then(function(result){
-        res.send(200)
-      })
-  })
-}
+    })
+  }
+  else{
+    Kids().where('id', req.body.kids).first().then(function(result){
+      var old_kid_hours = result.total_hours;
+      var kid_hours = req.body.hours;
+      var new_hours = parseFloat(old_kid_hours) + parseFloat(kid_hours);
+        Kids().where('id', result.id).update('total_hours', new_hours).then(function(result){
+          res.send(200)
+        })
+    })
+  }
 
-Posts().insert(post).then(function(result){
-  fs.unlink('./'+req.file.filename)
-  res.redirect('/#/feed')
-})
-})
+  Posts().insert(post).then(function(result){
+      res.redirect('/#/feed')
+    })
+    fs.unlink('./'+req.file.filename)
+ })
 })
 
 //Show posts on the profile for user you have selected.
