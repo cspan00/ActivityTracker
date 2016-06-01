@@ -123,10 +123,7 @@ post.description = req.body.description
 post.picture_url = result.secure_url
 post.hours = req.body.hours
 post.time = new Date();
-post.kid_1 = req.body.kids[0]
-post.kid_2 = req.body.kids[1]
-post.kid_3 = req.body.kids[2]
-post.kid_4 = req.body.kids[3]
+
 
 
 //update total number of hours for user when they make a post
