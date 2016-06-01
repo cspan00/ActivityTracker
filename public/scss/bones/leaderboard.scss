@@ -1,16 +1,35 @@
 .leaderboard{
-  background-color: tan;
   padding: 22px;
 }
 .leader-list{
-  background-color: tomato;
+  display: table;
 }
 .each-leader{
-  background-color: teal;
-  img{
-    border-radius: 50%;
-    height: 75px;
-    width: 75px;
+  background-color: white;
+  display: table-row;
+  .leader-name{
+    display: table-cell;
+    vertical-align: middle;
+    width: 2000px;
+    padding-left:  50px;
+    h1{
+      font-size: 2em;
+    }
+  }
+  .leader-hours{
+  display: table-cell;
+  vertical-align: middle;
+  padding-left:  0px;
+  padding-right: 22px;
+  }
+  .leader-photo{
+    height: 90px;
+    width: 90px;
     object-fit: cover;
+  }
+}
+.leader-name:hover{
+  h1{
+    opacity: .7;
   }
 }

@@ -1,10 +1,10 @@
 <div class="leaderboard">
 
 <div class="leader-list" ng-repeat = "kid in kids | orderBy: '-total_hours'">
-  <div class = "each-leader">
-    <!-- <a href = "/#/user/{{kid.facebook_id}}"><h3>{{kid.kid_name}} </h3></a>
-    <h3>{{kid.total_hours}}</h3> -->
-    <img class = "kidLeaderPic" src="{{kid.kid_pic}}">
+  <div class="each-leader">
+    <img class = "leader-photo" src="{{kid.kid_pic}}">
+    <a class="leader-name" href = "/#/user/{{kid.facebook_id}}"><h1>{{kid.kid_name}} </h1></a>
+    <h1 class="leader-hours">{{kid.total_hours}}</h1>
   </div>
 </div>
 
