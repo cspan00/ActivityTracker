@@ -403,6 +403,21 @@ select {
   -webkit-appearance: none;
   -webkit-border-radius: 0px; }
 
+.leaderboard {
+  background-color: tan;
+  padding: 22px; }
+
+.leader-list {
+  background-color: tomato; }
+
+.each-leader {
+  background-color: teal; }
+  .each-leader img {
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+    object-fit: cover; }
+
 header {
   background-color: white; }
 

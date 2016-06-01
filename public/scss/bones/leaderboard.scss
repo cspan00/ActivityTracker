@@ -1,0 +1,16 @@
+.leaderboard{
+  background-color: tan;
+  padding: 22px;
+}
+.leader-list{
+  background-color: tomato;
+}
+.each-leader{
+  background-color: teal;
+  img{
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+    object-fit: cover;
+  }
+}

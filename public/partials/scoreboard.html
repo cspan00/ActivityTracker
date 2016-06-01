@@ -1,11 +1,11 @@
+<div class="leaderboard">
 
-<h1> Leader Board </h1>
-
-
-<div ng-repeat = "kid in kids | orderBy: '-total_hours'">
-  <div class = "kidLeaderContainer">
-    <p> Name </p>: <a href = "/#/user/{{kid.facebook_id}}"><h3>{{kid.kid_name}} </h3></a>
-    <p> Hours Outside </p>: <h3>{{kid.total_hours}} </h3> 
+<div class="leader-list" ng-repeat = "kid in kids | orderBy: '-total_hours'">
+  <div class = "each-leader">
+    <!-- <a href = "/#/user/{{kid.facebook_id}}"><h3>{{kid.kid_name}} </h3></a>
+    <h3>{{kid.total_hours}}</h3> -->
     <img class = "kidLeaderPic" src="{{kid.kid_pic}}">
   </div>
-</div
+</div>
+
+</div>
