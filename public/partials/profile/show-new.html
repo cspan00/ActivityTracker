@@ -111,9 +111,24 @@
         <option value="WI">Wisconsin</option>
         <option value="WY">Wyoming</option>
       </select>
-      <button type="button flex1">
+      <!-- <button type="button flex1">
         <h5><a ng-click="hoursMinus()">-</a>{{hours}}<a ng-click="hoursPlus()">+</a> </h5>
-      </button>
+      </button> -->
+      <div class="formelement">
+        <button type="button" class="minus" ng-click="hoursMinus()">
+          <h5>-</h5>
+        </button>
+      </div>
+      <div class="formelement">
+        <button type="button" class="hours">
+          <h5>{{hours}}</h5>
+        </button>
+      </div>
+      <div class="formelement">
+        <button type="button" class="add" ng-click="hoursPlus()">
+          <h5>+</h5>
+        </button>
+      </div>
 
 
       <div ng-repeat = "kid in kids">
