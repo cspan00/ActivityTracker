@@ -191,18 +191,9 @@ router.get('/post/:id', function(req, res, next){
     res.send(response);
     })
 })
-router.get('/post/:id/comments', function(req,res, next){
-  Comments().where('post_id', req.params.id).then(function(response){
-    res.send(response);
-    })
-})
 
-router.post('/post/:id/comments', function(req, res, next){
-  console.log(req.body);
-  Comments().insert(req.body).then(function(response){
-    res.status(200)
-  })
-})
+
+
 // Deletes post and subtracts hours from users total score
 router.get('/post/:id/delete', function (req, res, next) {
   var hours;
