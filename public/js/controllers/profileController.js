@@ -26,6 +26,24 @@ $scope.showKidForm = function(){
   console.log("clickded");
 }
 
+$scope.hours = 1;
+
+$scope.hoursPlus = function(){
+  if ($scope.hours == 8){
+
+  }
+  else{
+    $scope.hours+= .5
+  }
+}
+$scope.hoursMinus = function(){
+  if ($scope.hours == .5){
+
+  }
+  else{
+    $scope.hours-= .5
+  }
+}
 
 
 
