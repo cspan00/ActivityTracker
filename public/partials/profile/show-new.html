@@ -9,15 +9,34 @@
         <div class="progress-fill" ng-style="{width: user.total_hours +'%'}"></div>
       </div>
 
+    <h3> Add Kids!</h3>
+      <form method = "POST" action = "/new/kid">
+          <input type = "text" name = "kid_name" placeholder = "enter a first name only">
+          <br>
+         </br>
+          <select name = "kid_pic">
+            <option value = "disabled">Select an Avatar! </option>
+            <option value = "../img/avatars/kayaking.jpg">Kayaking</option>
+            <option value = "../img/avatars/climbing.jpg">Climbing</option>
+            <option value = "../img/avatars/LNT.jpg">Hiking</option>
+            <option value = "../img/avatars/SUP.jpg">SUP</option>
+            <option value = "../img/avatars/mtnbiker.jpg">Mountain Biking</option>
+            <option value = "../img/avatars/angler.jpg">Fishing</option>
+          </select>
+          <input type = "hidden" name = "total_hours" value = 0>
+          <input type = "hidden" name = "facebook_id" value = "{{user.facebook_id}}">
+        </br>
+        <button type = "submit">Add </button>
+      </form>
     </div>
-    <!-- <div class="pro-kids" ng-repeat = "kid in kids">
+    <div class="pro-kids" ng-repeat = "kid in kids">
       <div class="kid-pic-cont">
         <img class="pro-kid-pic" ng-src ="{{kid.kid_pic}}">
         <h5>{{kid.kid_name}}</h5>
       </div>
     </div>
 
-
+<!--
     <div class="pro-form">
       <button class = "btn btn-primary" ng-click = "showKidForm()"> Add Kid!</button>
           <form method = "POST" action = "/new/kid" enctype = "multipart/form-data" ng-show = "kidForm">

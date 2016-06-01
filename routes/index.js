@@ -215,18 +215,16 @@ router.get('/post/:id/delete', function (req, res, next) {
 })
 
 router.post('/new/kid', upload.single('file'), function (req, res, next){
-  cloudinary.uploader.upload(req.file.filename, function(result) {
     var kid = {};
-    kid.kid_pic = result.secure_url;
+    kid.kid_pic = req.body.kid_pic;
     kid.kid_name = req.body.kid_name;
     kid.facebook_id = req.body.facebook_id;
     kid.total_hours = req.body.total_hours;
     Kids().insert(kid).then(function(result){
       res.redirect('/#/profile')
     })
-    fs.unlink('./'+req.file.filename)
   })
-})
+
 
 router.get('/kids/:id', function(req, res, next){
   Kids().where('facebook_id', req.params.id).select().then(function(response){
