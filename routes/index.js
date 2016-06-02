@@ -123,7 +123,7 @@ router.post('/new/post', upload.single('file'), function(req, res, next){
   post.picture_url = result.secure_url
   post.hours = req.body.hours
   post.time = new Date();
-  post.location = req.body.city + "," + req.body.state
+  post.location = req.body.city + ", " + req.body.state
 
 
 
@@ -150,6 +150,7 @@ router.post('/new/post', upload.single('file'), function(req, res, next){
   }
   else{
     Kids().where('id', req.body.kids).first().then(function(result){
+      post.kid_1 = req.body.kids
       var old_kid_hours = result.total_hours;
       var kid_hours = req.body.hours;
       var new_hours = parseFloat(old_kid_hours) + parseFloat(kid_hours);
