@@ -403,6 +403,35 @@ select {
   -webkit-appearance: none;
   -webkit-border-radius: 0px; }
 
+.leaderboard {
+  padding: 22px; }
+
+.leader-list {
+  display: table; }
+
+.each-leader {
+  background-color: white;
+  display: table-row; }
+  .each-leader .leader-name {
+    display: table-cell;
+    vertical-align: middle;
+    width: 2000px;
+    padding-left: 50px; }
+    .each-leader .leader-name h1 {
+      font-size: 2em; }
+  .each-leader .leader-hours {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 0px;
+    padding-right: 22px; }
+  .each-leader .leader-photo {
+    height: 90px;
+    width: 90px;
+    object-fit: cover; }
+
+.leader-name:hover h1 {
+  opacity: .7; }
+
 header {
   background-color: white; }
 
