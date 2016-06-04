@@ -3,6 +3,12 @@
   margin: 0;
   padding: 0; }
 
+.fl-r {
+  float: right; }
+
+.fl-l {
+  float: left; }
+
 @font-face {
   font-family: 'BrandonGrotesque-Light';
   src: url("../fonts/BrandonGrotesque-Light.woff") format("woff"); }

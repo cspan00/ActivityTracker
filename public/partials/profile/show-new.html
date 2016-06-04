@@ -65,10 +65,10 @@
 
 <div class="formContainerProfile">
   <div class="newPostFormProfile">
-    <form method="POST" action="/new/post" enctype="multipart/for morrinm-data">
+    <form method="POST" action="/new/post" enctype="multipart/form-data">
     <div class="form-title">
       <h1>
-        <input  class='form-control titleInput' type="text" name="title" ng-model="title" required placeholder="What'd You Do Today?">
+        <input class='form-control titleInput' type="text" name="title" ng-model="title" required placeholder="What'd You Do Today?">
       </h1>
 
     </div>
@@ -76,9 +76,11 @@
       <textarea rows='4' class='form-control' type="text" name="description" ng-model="description" placeholder = "Tell us some more..." required></textarea>
     </div>
     <div class="form-footer">
-      <input class='form-control cityInput flex1' type="text" name="location" placeholder="City" ng-model="location" required>
-
-      <select class="form-control stateSelect flex1" name="state">
+      <div class="formelement">
+        <input class='form-control cityInput city' type="text" name="city" placeholder="City" ng-model="location" required>
+      </div>
+    <div class="formelement">
+      <select class="form-control stateSelect state" name="state">
         <option value="AL">Alabama</option>
         <option value="AK">Alaska</option>
         <option value="AZ">Arizona</option>
@@ -131,41 +133,48 @@
         <option value="WI">Wisconsin</option>
         <option value="WY">Wyoming</option>
       </select>
-      <!-- <button type="button flex1">
-        <h5><a ng-click="hoursMinus()">-</a>{{hours}}<a ng-click="hoursPlus()">+</a> </h5>
-      </button> -->
-      <div class="formelement">
-        <button type="button" class="minus" ng-click="hoursMinus()">
-          <h5>-</h5>
-        </button>
-      </div>
-      <div class="formelement">
-        <button type="button" class="hours">
-          <h5>{{hours}}</h5>
-        </button>
-      </div>
-      <div class="formelement">
-        <button type="button" class="add" ng-click="hoursPlus()">
-          <h5>+</h5>
-        </button>
-      </div>
+    </div>
+    <div class="formelement">
+    <select class="kid" name="kids">
+        <option ng-repeat = "kid in kids" name="kids" value="{{kid.id}}">{{kid.kid_name}}</option>
+    </select>
+  </div>
+
+    <div class="formelement">
+      <button type="button" class="minus" ng-click="hoursMinus()">
+        <h5>-</h5>
+      </button>
+    </div>
+    <div class="formelement">
+      <button type="button" class="hours">
+        <h5>{{hours}}</h5>
+      </button>
+    </div>
+    <div class="formelement">
+      <button type="button" class="add" ng-click="hoursPlus()">
+        <h5>+</h5>
+      </button>
+    </div>
 
 
-      <div ng-repeat = "kid in kids">
-        <button class="flex1"><input type = "checkbox" name = "kids" value = "{{kid.id}}">{{kid.kid_name}}</button>
-      </div>
 
-      <button type="button" class="flex1">
+    <div class="formelement">
+      <button type="button" class="image">
         <h5><label for="file">IMAGE</label></h5>
       </button>
-      <input class="inputfile flex1" type="file" name="file" id="file" required/>
+    </div>
+
+      <input class="inputfile" type="file" name="file" id="file" required/>
+
 
       <input type = "hidden" name = "facebook_id" value="{{facebook_id}}"></input>
       <input type = "hidden" name = "author_pic" value="{{author_picture}}"></input>
       <input type = "hidden" name = "author" value="{{author_name}}"></input>
       <input type = "hidden" name = "hours" value="{{hours}}"></input>
 
-      <button class="flex1"type="submit"><h5>POST</h5></button>
+    <div class="formelement">
+      <button  type="submit" class="submit"><h5>POST</h5></button>
+    </div>
 
     </div>
   </form>
@@ -187,8 +196,7 @@
             <p class="description">{{post.description}}</p>
         </div>
         <div class="bottom">
-        <p>{{post.location}}</p>
-        <p>{{post.time | amCalendar}}</p>
+        <p>{{post.location}} <span class="fl-r">{{post.time | amCalendar}}</span></p>
       </div>
       </div>
   </div>

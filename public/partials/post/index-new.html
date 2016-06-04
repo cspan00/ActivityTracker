@@ -148,8 +148,7 @@
             <p class="description" contenteditable="true">{{post.description}}</p>
         </div>
         <div class="bottom">
-        <p> {{post.location}} </p>
-        <p>{{post.time | amCalendar}}</p>
+        <p> {{post.location}} <span class="fl-r">{{post.time | amCalendar}}</span></p>
         <!-- <p class="edit"><a href="/#/posts/{{post.id}}/edit" ng-show="post.facebook_id == user" >Edit</a></p>
         <p class="edit"><a href='/#/feed' ng-click = "deletePost()" ng-show="post.facebook_id == user" >Delete</a></p> -->
       </div>
