@@ -16,57 +16,100 @@
 }
 .form-footer{
   width: 100%;
-  background-color: grey;
+  background-color: #E7E9EC;
   height: 3em;
   display: flex;
-  justify-content: flex-end;
-}
+  }
 .formelement{
   height: 3em;
-  flex-flow: row;
   input{
     height: 100%;
-    padding:1em;
+    margin: 0;
   }
   button{
     height: 100%;
     margin: 0;
+
   }
   select{
     height: 100%;
-    padding: 1em;
   }
   .submit{
-    width: 10em;
-    background-color: red;
+    background-color: silver;
+        padding: 1em;
   }
   .image{
-    width: 5em;
-    background-color: purple;
+    background-color: silver;
+        padding: 1em;
+  }
+  .hourslabel{
+    background-color: silver;
+        padding: 1em;
   }
   .minus{
-    background-color: red;
-    width: 3em;
+    background-color: #E7E9EC;
+    padding-left: 0.5em;
+    border-bottom: 2px solid silver;
+    border-top: 2px solid silver;
+    h5{
+      color: red;
+    }
+    :hover{
+      cursor: pointer;
+
+    }
+
   }
   .hours{
-    background-color: teal;
-    width: 3em;
+    background-color: #E7E9EC;
+    width: 2em;
+    border-bottom: 2px solid silver;
+    border-top: 2px solid silver;
+
   }
   .add{
-    background-color: green;
-    width: 3em;
+    background-color: #E7E9EC;
+    padding-right: 0.5em;
+    border-bottom: 2px solid silver;
+    border-top: 2px solid silver;
+    h5{
+      color: green;
+    }
+    :hover{
+      cursor: pointer;
+    }
+
+  }
+  .location{
+    background-color: silver;
+        padding: 1em;
   }
   .city{
-    background-color: pink;
-    width: 10em;
+    background-color: #E7E9EC;
+    width: 6em;
+    padding: 1em;
+    border-bottom: 2px solid silver;
+    border-top: 2px solid silver;
+
   }
   .state{
-    background-color: orange;
-    width:10em;
+    background-color: #E7E9EC;
+    padding-left: 1em;
+    padding-right: 1em;
+      border-bottom: 2px solid silver;
+      border-top: 2px solid silver;
+
+  }
+  .kidslabel{
+    background-color: silver;
+    padding: 1em;
   }
   .kid{
-    background-color: skyblue;
-    width:10em;
+    background-color: #E7E9EC;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-bottom: 2px solid silver;
+    border-top: 2px solid silver;
   }
 }
 
@@ -94,8 +137,8 @@ button{
   border: none;
   background-color: skyblue;
   h5{
-    font-size: 0.8em;
-    letter-spacing: 0.2em;
+    font-size: 0.9em;
+    letter-spacing: 0.1em;
   }
 }
 select{
