@@ -18,10 +18,12 @@
   width: 100%;
   background-color: #E7E9EC;
   height: 3em;
-  display: flex;
+  display: inline-flex;
+vertical-align: middle;
   }
 .formelement{
   height: 3em;
+vertical-align: middle;
   input{
     height: 100%;
     margin: 0;
@@ -29,28 +31,46 @@
   button{
     height: 100%;
     margin: 0;
+  background-color: #E7E9EC;
 
   }
   select{
     height: 100%;
+      background-color: white;
   }
   .submit{
-    background-color: silver;
+        width: 10em;
         padding: 1em;
+        background-color: teal;
+        :hover{
+          cursor:pointer;
+        }
   }
   .image{
-    background-color: silver;
-        padding: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  .imageup{
+    background-color: white;
+    padding-left: 1em;
+    padding-right: 1em;
+    h5{
+      color:silver;
+    }
+    :hover{
+      cursor:pointer;
+    }
+
   }
   .hourslabel{
-    background-color: silver;
-        padding: 1em;
+
+        padding-left: 1em;
+        padding-right: 1em;
   }
   .minus{
-    background-color: #E7E9EC;
+  background-color: white;
     padding-left: 0.5em;
-    border-bottom: 2px solid silver;
-    border-top: 2px solid silver;
+
     h5{
       color: red;
     }
@@ -61,17 +81,18 @@
 
   }
   .hours{
-    background-color: #E7E9EC;
+
     width: 2em;
-    border-bottom: 2px solid silver;
-    border-top: 2px solid silver;
+    background-color: white;
+    h4{
+      color:silver;
+    }
 
   }
   .add{
-    background-color: #E7E9EC;
+background-color: white;
     padding-right: 0.5em;
-    border-bottom: 2px solid silver;
-    border-top: 2px solid silver;
+
     h5{
       color: green;
     }
@@ -81,35 +102,33 @@
 
   }
   .location{
-    background-color: silver;
-        padding: 1em;
+        padding-left: 1em;
+        padding-right: 1em;
   }
   .city{
-    background-color: #E7E9EC;
     width: 6em;
     padding: 1em;
-    border-bottom: 2px solid silver;
-    border-top: 2px solid silver;
 
   }
   .state{
-    background-color: #E7E9EC;
+
     padding-left: 1em;
     padding-right: 1em;
-      border-bottom: 2px solid silver;
-      border-top: 2px solid silver;
 
   }
-  .kidslabel{
-    background-color: silver;
-    padding: 1em;
+  .dropv{
+    background-color: white;
   }
-  .kid{
-    background-color: #E7E9EC;
+  .kidslabel{
+
     padding-left: 1em;
     padding-right: 1em;
-    border-bottom: 2px solid silver;
-    border-top: 2px solid silver;
+  }
+  .kid{
+
+    padding-left: 1em;
+    padding-right: 1em;
+
   }
 }
 
@@ -135,16 +154,19 @@ input{
 button{
   outline: none;
   border: none;
-  background-color: skyblue;
+
   h5{
     font-size: 0.9em;
     letter-spacing: 0.1em;
   }
 }
 select{
+  color:silver;
   outline: none;
   border: none;
-  background-color: teal;
+
   -webkit-appearance: none;
     -webkit-border-radius: 0px;
 }
+
+i, h5{ vertical-align: middle !important; }
