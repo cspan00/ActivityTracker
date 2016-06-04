@@ -7,5 +7,9 @@ app.controller("profileShowController", function($scope, $http, posts, $routePar
     posts.getPostById(result.facebook_id).then(function(result){
       $scope.posts = result;
     })
+      posts.getKidsByFBId(result.facebook_id).then(function(result){
+        console.log(result);
+        $scope.kids = result
+    })
   })
 })

@@ -8,6 +8,13 @@
       <div class="progress-container">
         <div class="progress-fill" ng-style="{width: user.total_hours +'%'}"></div>
       </div>
+      <div class="pro-kids" ng-repeat = "kid in kids">
+        <div class="kid-pic-cont">
+          <img class="pro-kid-pic" ng-src ="{{kid.kid_pic}}">
+          <h5>{{kid.kid_name}}</h5>
+          <h5> Hours: {{kid.total_hours}}</h5>
+        </div>
+      </div>
 
     </div>
     <!-- <div class="pro-kids" ng-repeat = "kid in kids">
