@@ -1,9 +1,9 @@
 <div class = "splashContainer">
-  <h2>Outside4Life</h2>
-  <p>Log your outdoor activity to win prizes</p>
+  <h1 class = "splashTitle">Outside4Life</h1>
+  <h2>Log your families outdoor activity to win prizes</h2>
+  <div ng-click="authenticate('facebook')" class="signIn">
+    <img src = "../img/facebook.png" class = "fbIcon">
+      <h3>Sign in with Facebook</h3>
+  </div>
 </div>  <!-- <a ng-click="authenticate('facebook')" class="slider_btn">Get Started Now!</a> -->
   <img src = "splashBG.jpg" class = "splashBG">
-
-
-  <p ng-show="!user.session"><a ng-click="authenticate('facebook')" class="slider_btn">Sign in with Facebook</a></p>
-</div>
