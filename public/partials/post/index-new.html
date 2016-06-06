@@ -16,7 +16,7 @@
 
 
       <div class="formelement">
-        <button class="location"type="button" name="button"><h5><i class="material-icons">location_on</i><span>Location</span></h5></button>
+        <button class="location"type="button" name="button"><h5><i class="material-icons">location_on</i></h5></button>
       </div>
       <div class="formelement">
         <input class='form-control cityInput city' type="text" name="city" placeholder="Denver" ng-model="location" required>
@@ -79,13 +79,18 @@
       </select>
     </div>
     <div class="formelement">
-      <button class="kidslabel"type="button" name="button"><h5><i class="material-icons">child_care</i><span> Kids</span></h5></button>
+      <button class="kidslabel"type="button" name="button"><h5><i class="material-icons">child_care</i></h5></button>
     </div>
+
+
     <div class="formelement">
-    <select class="kid" name="kids">
+    <select class="kid" name="kids" multiple="true">
         <option ng-repeat = "kid in kids" name="kids" value="{{kid.id}}">{{kid.kid_name}}</option>
     </select>
   </div>
+
+
+
 
   <div class="formelement">
     <button class="hourslabel" type="button" name="button"><h5><i class="material-icons">schedule</i><span> Hours</span></h5></button>
@@ -112,7 +117,7 @@
     <div class="formelement">
       <button type="button" class="image">
         <h5>
-        <i class="material-icons">camera_alt</i><span> Photo</span></label></h5>
+        <i class="material-icons">camera_alt</i></label></h5>
       </button>
     </div>
     <div class="formelement">
