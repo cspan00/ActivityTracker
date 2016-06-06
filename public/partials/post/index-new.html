@@ -5,16 +5,16 @@
     <form method="POST" action="/new/post" enctype="multipart/form-data">
     <div class="form-title">
       <h1>
-        <input class='form-control titleInput' type="text" name="title" ng-model="title" required placeholder="What'd You Do Today?">
+        <input ng-model="showfoot" class='form-control titleInput' type="text" name="title" ng-model="title" required placeholder="What'd You Do Today?" >
       </h1>
 
     </div>
     <div class="form-body">
-      <textarea rows='4' class='form-control' type="text" name="description" ng-model="description" placeholder = "Tell us some more..." required></textarea>
+      <textarea ng-model="showfooter" rows='4' class='form-control' type="text" name="description" ng-model="description" placeholder = "Tell us some more..." required></textarea>
     </div>
-    <div class="form-footer">
+        <div class="form-footer" ng-show="showfoot && showfooter">
 
-
+      <hr>
       <div class="formelement">
         <button class="location"type="button" name="button"><h5><i class="material-icons">location_on</i></h5></button>
       </div>
@@ -78,22 +78,28 @@
         <option value="WY">WY</option>
       </select>
     </div>
+        <br>
+
+        <hr>
+
+
     <div class="formelement">
       <button class="kidslabel"type="button" name="button"><h5><i class="material-icons">child_care</i></h5></button>
     </div>
 
 
     <div class="formelement">
-    <select class="kid" name="kids" multiple="true">
-        <option ng-repeat = "kid in kids" name="kids" value="{{kid.id}}">{{kid.kid_name}}</option>
-    </select>
+
+      <h4><label class="checklabel" ng-repeat = "kid in kids"><input type="checkbox"  name="kids" value="{{kid.id}}"/>{{kid.kid_name}}</label>
+
   </div>
+    <br>
 
 
 
-
+<hr>
   <div class="formelement">
-    <button class="hourslabel" type="button" name="button"><h5><i class="material-icons">schedule</i><span> Hours</span></h5></button>
+    <button class="hourslabel" type="button" name="button"><h5><i class="material-icons">schedule</i></h5></button>
 
   </div>
     <div class="formelement">
@@ -103,7 +109,7 @@
     </div>
     <div class="formelement">
       <button type="button" class="hours">
-        <h4>{{hours}}</h4>
+        <h4>{{hours}} hrs</h4>
       </button>
     </div>
     <div class="formelement">
@@ -111,9 +117,9 @@
         <h5>+</h5>
       </button>
     </div>
+  <br>
 
-
-
+<hr>
     <div class="formelement">
       <button type="button" class="image">
         <h5>
@@ -133,36 +139,23 @@
       <input type = "hidden" name = "author_pic" value="{{author_picture}}"></input>
       <input type = "hidden" name = "author" value="{{author_name}}"></input>
       <input type = "hidden" name = "hours" value="{{hours}}"></input>
+      <br>
 
-    <div class="formelement">
-      <button  type="submit" class="submit"><h5><i class="material-icons">send</i></label></h5></button>
-    </div>
 
     </div>
+
+        <button class="sendit" type="submit"><h3><i class="material-icons">send</i> Post</h3></button>
   </form>
 </div>
 </div>
 
 
-<!-- <div class="feedContainer">
-  <div class="feedPost container" ng-repeat = "post in posts | orderBy: 'id' : 'reverse'">
 
-        <img src="{{post.author_pic}}">
-        <a href = "/#/user/{{post.facebook_id}}"><h3>{{post.author}}</h3></a>
-        <h5>{{post.time | amCalendar}}</h5>
-        <h3>{{post.title}}</h3>
-        <h2>{{post.hours}}</h2>
-        <img src="{{post.picture_url}}">
-        <p>{{post.description}}</p>
-
-    </div>
-  </div> -->
-
-<div class="feedContainer">
+<div class="feedContainer" ng-hide="showfoot && showfooter">
 
   <div masonry >
       <div class="masonry-brick feedPost container" ng-repeat="post in posts">
-        <!-- <img src="{{post.author_pic}}"> -->
+
         <div class="post-img">
           <img src="{{post.picture_url}}" style='height: 100%; width: 100%; object-fit: cover' />
         </div>
@@ -174,8 +167,8 @@
         </div>
         <div class="bottom">
         <p> {{post.location}} <span class="fl-r">{{post.time | amCalendar}}</span></p>
-        <!-- <p class="edit"><a href="/#/posts/{{post.id}}/edit" ng-show="post.facebook_id == user" >Edit</a></p>
-        <p class="edit"><a href='/#/feed' ng-click = "deletePost()" ng-show="post.facebook_id == user" >Delete</a></p> -->
+        <p class="edit"><a href="/#/posts/{{post.id}}/edit" ng-show="post.facebook_id == user" >Edit</a></p>
+        <p class="edit"><a href='/#/feed' ng-click = "deletePost()" ng-show="post.facebook_id == user" >Delete</a></p>
       </div>
       </div>
   </div>

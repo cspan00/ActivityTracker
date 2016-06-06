@@ -16,14 +16,24 @@
 }
 .form-footer{
   width: 100%;
-  background-color: #E7E9EC;
-  height: 3em;
-  display: inline-flex;
-vertical-align: middle;
+  background-color: white;
+  height: 12em;
+  vertical-align: middle;
+  }
+  .sendit{
+    width: 100%;
+    height:3em;
+    background-color: silver;
+    margin: auto;
+    margin-bottom: 5em;
   }
 .formelement{
   height: 3em;
+  display: inline-block;
 vertical-align: middle;
+.checklabel{
+  margin-bottom: -2px;
+}
   input{
     height: 100%;
     margin: 0;
@@ -31,31 +41,25 @@ vertical-align: middle;
   button{
     height: 100%;
     margin: 0;
-  background-color: #E7E9EC;
+  background-color: white;
 
   }
   select{
     height: 100%;
-      background-color: white;
+    background-color: WHITE;
   }
-  .submit{
-        width: 10em;
-        padding: 1em;
-        background-color: teal;
-        :hover{
-          cursor:pointer;
-        }
-  }
+
+
   .image{
     padding-left: 1em;
     padding-right: 1em;
   }
   .imageup{
-    background-color: white;
+
     padding-left: 1em;
     padding-right: 1em;
     h5{
-      color:silver;
+
     }
     :hover{
       cursor:pointer;
@@ -68,11 +72,11 @@ vertical-align: middle;
         padding-right: 1em;
   }
   .minus{
-  background-color: white;
     padding-left: 0.5em;
 
     h5{
       color: red;
+      font-size: 1.5em;
     }
     :hover{
       cursor: pointer;
@@ -82,19 +86,16 @@ vertical-align: middle;
   }
   .hours{
 
-    width: 2em;
-    background-color: white;
-    h4{
-      color:silver;
-    }
+    width: 4em;
+
 
   }
   .add{
-background-color: white;
     padding-right: 0.5em;
 
     h5{
       color: green;
+      font-size: 1.5em;
     }
     :hover{
       cursor: pointer;
@@ -117,7 +118,7 @@ background-color: white;
 
   }
   .dropv{
-    background-color: white;
+
   }
   .kidslabel{
 
@@ -161,7 +162,6 @@ button{
   }
 }
 select{
-  color:silver;
   outline: none;
   border: none;
 
@@ -170,3 +170,26 @@ select{
 }
 
 i, h5{ vertical-align: middle !important; }
+.ib{
+  display: inline-block;
+}
+
+
+
+@media (max-width: 1250px) {
+.formelement{
+
+}
+
+}
+@media (max-width: 1000px) {
+.formelement{
+
+
+}
+
+}
+@media (max-width: 650px) {
+
+
+}
