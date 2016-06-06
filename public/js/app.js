@@ -18,6 +18,7 @@ app.config(function ($routeProvider, $authProvider) {
  $routeProvider
  .when('/', {
    templateUrl: 'partials/home.html',
+   controller: 'mainController'
  })
  .when('/home', {
    templateUrl: 'partials/home.html',
