@@ -40,10 +40,6 @@ app.config(function ($routeProvider, $authProvider) {
    templateUrl: 'partials/post/new.html',
    controller: 'newController'
  })
- .when('/login', {
-   templateUrl: 'partials/login.html',
-   controller: 'mainController'
- })
  .when('/profile/new',{
   templateUrl: 'partials/profile/new.html',
   controller: 'profileController'
