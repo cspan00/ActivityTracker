@@ -137,7 +137,7 @@ router.post('/new/post', upload.single('file'), function(req, res, next){
     })
   })
   // check to see if more than one kid is selected then update total hours accordingly.
-  if(req.body.kids.isArray === true){
+  if(typeof req.body.kids === "object"){
     req.body.kids.forEach(function(elem, i){
       Kids().where('id', elem).first().then(function(result){
         var old_kid_hours = result.total_hours;
@@ -162,8 +162,6 @@ router.post('/new/post', upload.single('file'), function(req, res, next){
   Posts().insert(post).then(function(result){
       res.redirect('/#/feed')
     })
-    console.log("&&&&&& FILENAME &&&&&&&");
-    console.log(req.file.filename);
     fs.unlink('./'+req.file.filename)
  })
 })
