@@ -77,20 +77,6 @@ header {
   height: 2em;
   width: auto; }
 
-.nav {
-  float: right; }
-.nav a {
-  font-size: 1.5em;
-  border: 1px solid black;
-  padding: 5px;
-  border-radius: 10px;
-  color: #296774
-
-}
-.fbIconHeader{
-  height: 20px;
-  margin-right: 5px;
-}
 
 .mobilefooter {
   display: none; }
@@ -259,41 +245,7 @@ html {
 
 .edit {
   float: right; }
-.splashBG{
-    position: fixed;
-    top: 4em;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    z-index:-5;
-  }
-.splashContainer{
-    margin-left: 40%;
-    margin-top: 10%;
-  }
-.splashContainer h1{
-  font-size: 3em;
-  margin-bottom: 0px;
-  color: #FFF;
-}
-.splashContainer h2{
-  color: #FFF;
-}
-.fbIcon{
-  height: 20px;
-  float: left;
-  margin-right: 5px;
-}
-.signIn {
-  margin-top: 10px;
-}
-.signIn h3{
-  font-weight: bold;
-  color: #FFF;
-}
+
 
 @media (max-width: 1250px) {
   .newPostForm {
@@ -357,12 +309,7 @@ html {
     position: static;
     padding-left: 0;
     padding-right: 0; }
-  .splashContainer{
-    margin-left: 5%;
-    margin-top: 15%; }
-  .signIn{
-    display: none;
-    } }
+  } }
 
 .form-title {
   padding-left: 1em;
