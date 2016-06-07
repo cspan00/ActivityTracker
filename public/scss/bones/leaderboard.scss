@@ -16,9 +16,22 @@
       font-size: 2em;
     }
   }
+  .leader-name-pro{
+    display: table-cell;
+    vertical-align: middle;
+    padding-left:  22px;
+    padding-right: 88px;
+
+    text-align: left;
+    h1{
+      font-size: 2em;
+    }
+  }
+
   .leader-hours{
   display: table-cell;
   vertical-align: middle;
+  text-align: right;
   padding-left:  0px;
   padding-right: 22px;
   }
@@ -27,9 +40,29 @@
     width: 90px;
     object-fit: cover;
   }
+  .leader-photo-pro{
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+  }
+  .leader-photo-pro-add{
+    height: 60px;
+    width: 60px;
+    color:#717171;
+  }
 }
 .leader-name:hover{
   h1{
     opacity: .7;
   }
+}
+
+
+
+
+.kidscont{
+  width: 100%;
+  padding:1em;
+  padding-bottom: 2em;
+
 }
