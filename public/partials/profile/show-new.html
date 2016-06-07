@@ -9,6 +9,39 @@
         <div class="progress-fill" ng-style="{width: user.total_hours +'%'}"></div>
       </div>
 
+    <div class="kidscont">
+
+      <div class="each-leader" ng-repeat="kid in kids" ng-hide="addform">
+        <img class = "leader-photo-pro" src="{{kid.kid_pic}}">
+        <a class="leader-name-pro"><h2>{{kid.kid_name}} </h2></a>
+        <h5 class="leader-hours leader-hours-profile">{{kid.total_hours}}hrs</h5>
+      </div>
+
+  </div>
+  <form ng-show="addform" class="addform" method="POST" action="/new/kid" >
+
+    <h3>Avatar</h3>
+    <img ng-class="{'tada': kid.pic == '../img/avatars/angler.jpg'}" ng-click="selectavatar('../img/avatars/angler.jpg')" class = "leader-photo-pro animated infinite" src="../../img/avatars/angler.jpg">
+    <img ng-class="{'tada': kid.pic == '../img/avatars/climbing.jpg'}" ng-click="selectavatar('../img/avatars/climbing.jpg')" class = "leader-photo-pro animated infinite" src="../../img/avatars/climbing.jpg">
+    <img ng-class="{'tada': kid.pic == '../img/avatars/kayaking.jpg'}" ng-click="selectavatar('../img/avatars/kayaking.jpg')" class = "leader-photo-pro animated infinite" src="../../img/avatars/kayaking.jpg">
+    <img ng-class="{'tada': kid.pic == '../img/avatars/LNT.jpg'}" ng-click="selectavatar('../img/avatars/LNT.jpg')" class = "leader-photo-pro animated infinite" src="../../img/avatars/LNT.jpg">
+    <img ng-class="{'tada': kid.pic == '../img/avatars/mtnbiker.jpg'}" ng-click="selectavatar('../img/avatars/mtnbiker.jpg')" class = "leader-photo-pro animated infinite" src="../../img/avatars/mtnbiker.jpg">
+    <img ng-class="{'tada': kid.pic == '../img/avatars/SUP.jpg'}" ng-click="selectavatar('../img/avatars/SUP.jpg')" class = "leader-photo-pro animated infinite" src="../../img/avatars/SUP.jpg">
+    <h3>Name</h3>
+    <input type="text" name="kid_name" value="" placeholder="Crazy Corey" style="text-align:center;" required="true">
+    <input type="hidden" name="kid_pic" ng-value="kid.pic">
+    <input type = "hidden" name = "total_hours" value = 0>
+    <input type = "hidden" name = "facebook_id" value = "{{user.facebook_id}}">
+    <div class="showkidform" ng-show="addform">
+      <button ng-click="addformfunc()"type="button" class="senditback"><h3><i class="material-icons">keyboard_backspace</i></h3></button>
+      <button type="submit" class="senditkid"><h3><i class="material-icons">send</i> Submit</h3></button>
+    </div>
+  </form>
+
+
+  <div class="showkidform" ng-hide="addform">
+    <button class="sendit" ng-click="addformfunc()"><h3><i class="material-icons">add</i> Add Kid</h3></button>
+  </div>
     <!-- <h3> Add Kids!</h3>
       <form method = "POST" action = "/new/kid">
           <input type = "text" name = "kid_name" placeholder = "enter a first name only">
@@ -60,7 +93,8 @@
 </div>
 
 
-<div class="formContainerProfile">
+
+<div class="formContainerProfile" ng-show="kids.length > 0">
   <div class="newPostFormProfile">
     <form method="POST" action="/new/post" enctype="multipart/form-data">
     <div class="form-title">
