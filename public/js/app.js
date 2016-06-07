@@ -18,6 +18,7 @@ app.config(function ($routeProvider, $authProvider) {
  $routeProvider
  .when('/', {
    templateUrl: 'partials/home.html',
+   controller: 'mainController'
  })
  .when('/home', {
    templateUrl: 'partials/home.html',
@@ -38,10 +39,6 @@ app.config(function ($routeProvider, $authProvider) {
  .when('/newpost',{
    templateUrl: 'partials/post/new.html',
    controller: 'newController'
- })
- .when('/login', {
-   templateUrl: 'partials/login.html',
-   controller: 'mainController'
  })
  .when('/profile/new',{
   templateUrl: 'partials/profile/new.html',

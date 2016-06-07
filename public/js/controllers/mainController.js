@@ -50,4 +50,6 @@ app.controller('mainController', function($scope, $rootScope, $location, $auth, 
     console.log("username is: " + $scope.userName);
   })
 
+  $scope.bgimg = "public/splashBG.jpg"
+
  });

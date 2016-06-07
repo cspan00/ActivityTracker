@@ -22,8 +22,10 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css" rel="stylesheet">
     <!-- <link href="css/template_style.css" rel="stylesheet"> -->
-    <!-- <link href="css/custom.css" rel="stylesheet"> -->
+    <link href="css/custom.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+
 
 
     <!-- Google fonts -->
@@ -31,6 +33,11 @@
     <link href='https://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <link rel="stylesheet" href="http://s.mlcdn.co/animate.css">
+
+
     <base href='/'>
   </head>
   <body>
@@ -59,7 +66,7 @@
               <a ng-show="user.session" href="/#/feed">Feed</a>
               <a ng-click="setNavTab()" ng-style="{'color': color.about}" href="/#/about">About</a>
               <a href="/#/contact">Contact</a>
-              <a ng-show="!user.session" href="/#/login">Sign In</a>
+              <a ng-show="!user.session" href="/#/login"><img src="img/facebook_blue.png" class = "fbIconHeader">Sign In</a>
               <a ng-show="user.session" href="/#/home" ng-click="logout()">Logout</a>
               <a ng-show="user.session" href="/#/profile" >Profile</a>
               <a ng-show="user.session" href="/#/leaderboard">Leaderboard</a>
@@ -77,7 +84,7 @@
       <a ng-show="user.session" href="/#/feed">Feed</a>
       <a ng-click="setNavTab()" ng-style="{'color': color.about}" href="/#/about">About</a>
       <a href="/#/contact">Contact</a>
-      <a ng-show="!user.session" href="/#/login">Sign In</a>
+      <a ng-show="!user.session" ng-click = "authenticate('facebook')"><img src = "img/facebook_blue.png" class = "fbIcon"> Sign In</a>
       <a ng-show="user.session" href="/#/home" ng-click="logout()">Logout</a>
       <a ng-show="user.session" href="/#/profile" >Profile</a>
       <a ng-show='isAdmin' href="/#/admin">Admin</a>
@@ -86,6 +93,7 @@
     </section>
     <!--=========== End HEADER SECTION ================-->
   </div>
+
 
     <div class="templates" ng-view></div>
 
@@ -141,5 +149,7 @@
    <script type="text/javascript" src="js/controllers/profileShowController.js"></script>
    <script type="text/javascript" src="js/controllers/editController.js"></script>
    <script type="text/javascript" src="js/services/post_service.js"></script>
+   <script type="text/javascript" src="js/dropdown.js"></script>
+   <script type="text/javascript" src="js/directives.js"></script>
   </body>
 </html>

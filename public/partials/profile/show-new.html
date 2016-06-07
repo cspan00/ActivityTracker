@@ -9,7 +9,40 @@
         <div class="progress-fill" ng-style="{width: user.total_hours +'%'}"></div>
       </div>
 
-    <h3> Add Kids!</h3>
+    <div class="kidscont">
+
+      <div class="each-leader" ng-repeat="kid in kids" ng-hide="addform">
+        <img class = "leader-photo-pro" src="{{kid.kid_pic}}">
+        <a class="leader-name-pro"><h2>{{kid.kid_name}} </h2></a>
+        <h5 class="leader-hours leader-hours-profile">{{kid.total_hours}}hrs</h5>
+      </div>
+
+  </div>
+  <form ng-show="addform" class="addform" method="POST" action="/new/kid" >
+
+    <h3>Avatar</h3>
+    <img ng-class="{'tada': kid.pic == '../img/avatars/angler.jpg'}" ng-click="selectavatar('../img/avatars/angler.jpg')" class = "leader-photo-pro animated infinite" src="../../img/avatars/angler.jpg">
+    <img ng-class="{'tada': kid.pic == '../img/avatars/climbing.jpg'}" ng-click="selectavatar('../img/avatars/climbing.jpg')" class = "leader-photo-pro animated infinite" src="../../img/avatars/climbing.jpg">
+    <img ng-class="{'tada': kid.pic == '../img/avatars/kayaking.jpg'}" ng-click="selectavatar('../img/avatars/kayaking.jpg')" class = "leader-photo-pro animated infinite" src="../../img/avatars/kayaking.jpg">
+    <img ng-class="{'tada': kid.pic == '../img/avatars/LNT.jpg'}" ng-click="selectavatar('../img/avatars/LNT.jpg')" class = "leader-photo-pro animated infinite" src="../../img/avatars/LNT.jpg">
+    <img ng-class="{'tada': kid.pic == '../img/avatars/mtnbiker.jpg'}" ng-click="selectavatar('../img/avatars/mtnbiker.jpg')" class = "leader-photo-pro animated infinite" src="../../img/avatars/mtnbiker.jpg">
+    <img ng-class="{'tada': kid.pic == '../img/avatars/SUP.jpg'}" ng-click="selectavatar('../img/avatars/SUP.jpg')" class = "leader-photo-pro animated infinite" src="../../img/avatars/SUP.jpg">
+    <h3>Alias</h3>
+    <input type="text" name="kid_name" value="" placeholder="Enter An Alias" style="text-align:center;" required="true">
+    <input type="hidden" name="kid_pic" ng-value="kid.pic">
+    <input type = "hidden" name = "total_hours" value = 0>
+    <input type = "hidden" name = "facebook_id" value = "{{user.facebook_id}}">
+    <div class="showkidform" ng-show="addform">
+      <button ng-click="addformfunc()"type="button" class="senditback"><h3><i class="material-icons">keyboard_backspace</i></h3></button>
+      <button type="submit" class="senditkid"><h3><i class="material-icons">send</i> Submit</h3></button>
+    </div>
+  </form>
+
+
+  <div class="showkidform" ng-hide="addform">
+    <button class="sendit" ng-click="addformfunc()"><h3><i class="material-icons">add</i> Add Kid</h3></button>
+  </div>
+    <!-- <h3> Add Kids!</h3>
       <form method = "POST" action = "/new/kid">
           <input type = "text" name = "kid_name" placeholder = "enter a first name only">
           <br>
@@ -35,7 +68,7 @@
         <h5>{{kid.kid_name}}</h5>
         <h5> Hours: {{kid.total_hours}}</h5>
       </div>
-    </div>
+    </div> -->
 
 <!--
     <div class="pro-form">
@@ -61,14 +94,162 @@
 
 
 
-
-
-<div class="formContainerProfile">
+<div class="formContainerProfile" ng-show="kids.length > 0">
   <div class="newPostFormProfile">
-    <form method="POST" action="/new/post" enctype="multipart/for morrinm-data">
+    <form method="POST" action="/new/post" enctype="multipart/form-data">
     <div class="form-title">
       <h1>
-        <input  class='form-control titleInput' type="text" name="title" ng-model="title" required placeholder="What'd You Do Today?">
+        <input ng-model="showfoot" class='form-control titleInput' type="text" name="title" ng-model="title" required placeholder="What'd You Do Today?" >
+      </h1>
+
+    </div>
+    <div class="form-body">
+      <textarea ng-model="showfooter" rows='4' class='form-control' type="text" name="description" ng-model="description" placeholder = "Tell us some more..." required></textarea>
+    </div>
+        <div class="form-footer" ng-show="showfoot && showfooter">
+
+      <hr>
+      <div class="formelement">
+        <button class="location"type="button" name="button"><h5><i class="material-icons">location_on</i></h5></button>
+      </div>
+      <div class="formelement">
+        <input class='form-control cityInput city' type="text" name="city" placeholder="Denver" ng-model="location" required>
+      </div>
+    <div class="formelement">
+
+
+      <select class="form-control stateSelect state" name="state">
+        <option value="AL">AL</option>
+        <option value="AK">AK</option>
+        <option value="AZ">AZ</option>
+        <option value="AR">AR</option>
+        <option value="CA">CA</option>
+        <option value="CO" selected="true">CO</option>
+        <option value="CT">CT</option>
+        <option value="DE">DE</option>
+        <option value="DC">DC</option>
+        <option value="FL">FL</option>
+        <option value="GA">GA</option>
+        <option value="HI">HI</option>
+        <option value="ID">ID</option>
+        <option value="IL">IL</option>
+        <option value="IN">IN</option>
+        <option value="IA">IA</option>
+        <option value="KS">KS</option>
+        <option value="KY">KY</option>
+        <option value="LA">LA</option>
+        <option value="ME">ME</option>
+        <option value="MD">MD</option>
+        <option value="MA">MA</option>
+        <option value="MI">MI</option>
+        <option value="MN">MN</option>
+        <option value="MS">MS</option>
+        <option value="MO">MO</option>
+        <option value="MT">MT</option>
+        <option value="NE">NE</option>
+        <option value="NV">NV</option>
+        <option value="NH">NH</option>
+        <option value="NJ">NJ</option>
+        <option value="NM">NM</option>
+        <option value="NY">NY</option>
+        <option value="NC">NC</option>
+        <option value="ND">ND</option>
+        <option value="OH">OH</option>
+        <option value="OK">OK</option>
+        <option value="OR">OR</option>
+        <option value="PA">PA</option>
+        <option value="RI">RI</option>
+        <option value="SC">SC</option>
+        <option value="SD">SD</option>
+        <option value="TN">TN</option>
+        <option value="TX">TX</option>
+        <option value="UT">UT</option>
+        <option value="VT">VT</option>
+        <option value="VA">VA</option>
+        <option value="WA">WA</option>
+        <option value="WV">WV</option>
+        <option value="WI">WI</option>
+        <option value="WY">WY</option>
+      </select>
+    </div>
+        <br>
+
+        <hr>
+
+
+    <div class="formelement">
+      <button class="kidslabel"type="button" name="button"><h5><i class="material-icons">child_care</i></h5></button>
+    </div>
+
+
+    <div class="formelement">
+
+      <h4><label class="checklabel" ng-repeat = "kid in kids"><input type="checkbox"  name="kids" value="{{kid.id}}"/>{{kid.kid_name}}</label>
+
+  </div>
+    <br>
+
+
+
+<hr>
+  <div class="formelement">
+    <button class="hourslabel" type="button" name="button"><h5><i class="material-icons">schedule</i></h5></button>
+
+  </div>
+    <div class="formelement">
+      <button type="button" class="minus" ng-click="hoursMinus()">
+        <h5>-</h5>
+      </button>
+    </div>
+    <div class="formelement">
+      <button type="button" class="hours">
+        <h4>{{hours}} hrs</h4>
+      </button>
+    </div>
+    <div class="formelement">
+      <button type="button" class="add" ng-click="hoursPlus()">
+        <h5>+</h5>
+      </button>
+    </div>
+  <br>
+
+<hr>
+    <div class="formelement">
+      <button type="button" class="image">
+        <h5>
+        <i class="material-icons">camera_alt</i></label></h5>
+      </button>
+    </div>
+    <div class="formelement">
+      <button type="button" class="imageup">
+        <h5><label for="file">Upload</label></h5>
+      </button>
+    </div>
+
+      <input class="inputfile" type="file" name="file" id="file" required/>
+
+
+      <input type = "hidden" name = "facebook_id" value="{{facebook_id}}"></input>
+      <input type = "hidden" name = "author_pic" value="{{author_picture}}"></input>
+      <input type = "hidden" name = "author" value="{{author_name}}"></input>
+      <input type = "hidden" name = "hours" value="{{hours}}"></input>
+      <br>
+
+
+    </div>
+
+        <button class="sendit" type="submit"><h3><i class="material-icons">send</i> Post</h3></button>
+  </form>
+</div>
+</div>
+
+<!--
+<div class="formContainerProfile">
+  <div class="newPostFormProfile">
+    <form method="POST" action="/new/post" enctype="multipart/form-data">
+    <div class="form-title">
+      <h1>
+        <input class='form-control titleInput' type="text" name="title" ng-model="title" required placeholder="What'd You Do Today?">
       </h1>
 
     </div>
@@ -76,104 +257,146 @@
       <textarea rows='4' class='form-control' type="text" name="description" ng-model="description" placeholder = "Tell us some more..." required></textarea>
     </div>
     <div class="form-footer">
-      <input class='form-control cityInput flex1' type="text" name="location" placeholder="City" ng-model="location" required>
 
-      <select class="form-control stateSelect flex1" name="state">
-        <option value="AL">Alabama</option>
-        <option value="AK">Alaska</option>
-        <option value="AZ">Arizona</option>
-        <option value="AR">Arkansas</option>
-        <option value="CA">California</option>
-        <option value="CO">Colorado</option>
-        <option value="CT">Connecticut</option>
-        <option value="DE">Delaware</option>
-        <option value="DC">District of Columbia</option>
-        <option value="FL">Florida</option>
-        <option value="GA">Georgia</option>
-        <option value="HI">Hawaii</option>
-        <option value="ID">Idaho</option>
-        <option value="IL">Illinois</option>
-        <option value="IN">Indiana</option>
-        <option value="IA">Iowa</option>
-        <option value="KS">Kansas</option>
-        <option value="KY">Kentucky</option>
-        <option value="LA">Louisiana</option>
-        <option value="ME">Maine</option>
-        <option value="MD">Maryland</option>
-        <option value="MA">Massachusetts</option>
-        <option value="MI">Michigan</option>
-        <option value="MN">Minnesota</option>
-        <option value="MS">Mississippi</option>
-        <option value="MO">Missouri</option>
-        <option value="MT">Montana</option>
-        <option value="NE">Nebraska</option>
-        <option value="NV">Nevada</option>
-        <option value="NH">New Hampshire</option>
-        <option value="NJ">New Jersey</option>
-        <option value="NM">New Mexico</option>
-        <option value="NY">New York</option>
-        <option value="NC">North Carolina</option>
-        <option value="ND">North Dakota</option>
-        <option value="OH">Ohio</option>
-        <option value="OK">Oklahoma</option>
-        <option value="OR">Oregon</option>
-        <option value="PA">Pennsylvania</option>
-        <option value="RI">Rhode Island</option>
-        <option value="SC">South Carolina</option>
-        <option value="SD">South Dakota</option>
-        <option value="TN">Tennessee</option>
-        <option value="TX">Texas</option>
-        <option value="UT">Utah</option>
-        <option value="VT">Vermont</option>
-        <option value="VA">Virginia</option>
-        <option value="WA">Washington</option>
-        <option value="WV">West Virginia</option>
-        <option value="WI">Wisconsin</option>
-        <option value="WY">Wyoming</option>
+
+      <div class="formelement">
+        <button class="location"type="button" name="button"><h5>LOCATION</h5></button>
+      </div>
+      <div class="formelement">
+        <input class='form-control cityInput city' type="text" name="city" placeholder="Denver" ng-model="location" required>
+      </div>
+    <div class="formelement">
+
+
+      <select class="form-control stateSelect state" name="state">
+        <option value="AL">AL</option>
+        <option value="AK">AK</option>
+        <option value="AZ">AZ</option>
+        <option value="AR">AR</option>
+        <option value="CA">CA</option>
+        <option value="CO" selected="true">CO</option>
+        <option value="CT">CT</option>
+        <option value="DE">DE</option>
+        <option value="DC">DC</option>
+        <option value="FL">FL</option>
+        <option value="GA">GA</option>
+        <option value="HI">HI</option>
+        <option value="ID">ID</option>
+        <option value="IL">IL</option>
+        <option value="IN">IN</option>
+        <option value="IA">IA</option>
+        <option value="KS">KS</option>
+        <option value="KY">KY</option>
+        <option value="LA">LA</option>
+        <option value="ME">ME</option>
+        <option value="MD">MD</option>
+        <option value="MA">MA</option>
+        <option value="MI">MI</option>
+        <option value="MN">MN</option>
+        <option value="MS">MS</option>
+        <option value="MO">MO</option>
+        <option value="MT">MT</option>
+        <option value="NE">NE</option>
+        <option value="NV">NV</option>
+        <option value="NH">NH</option>
+        <option value="NJ">NJ</option>
+        <option value="NM">NM</option>
+        <option value="NY">NY</option>
+        <option value="NC">NC</option>
+        <option value="ND">ND</option>
+        <option value="OH">OH</option>
+        <option value="OK">OK</option>
+        <option value="OR">OR</option>
+        <option value="PA">PA</option>
+        <option value="RI">RI</option>
+        <option value="SC">SC</option>
+        <option value="SD">SD</option>
+        <option value="TN">TN</option>
+        <option value="TX">TX</option>
+        <option value="UT">UT</option>
+        <option value="VT">VT</option>
+        <option value="VA">VA</option>
+        <option value="WA">WA</option>
+        <option value="WV">WV</option>
+        <option value="WI">WI</option>
+        <option value="WY">WY</option>
       </select>
-      <!-- <button type="button flex1">
-        <h5><a ng-click="hoursMinus()">-</a>{{hours}}<a ng-click="hoursPlus()">+</a> </h5>
-      </button> -->
-      <div class="formelement">
-        <button type="button" class="minus" ng-click="hoursMinus()">
-          <h5>-</h5>
-        </button>
-      </div>
-      <div class="formelement">
-        <button type="button" class="hours">
-          <h5>{{hours}}</h5>
-        </button>
-      </div>
-      <div class="formelement">
-        <button type="button" class="add" ng-click="hoursPlus()">
-          <h5>+</h5>
-        </button>
-      </div>
+    </div>
+    <div class="formelement">
+      <button class="kidslabel"type="button" name="button"><h5>KIDS</h5></button>
+    </div>
+    <div class="formelement">
+    <select class="kid" name="kids">
+        <option ng-repeat = "kid in kids" name="kids" value="{{kid.id}}">{{kid.kid_name}}</option>
+    </select>
+  </div>
+
+  <div class="formelement">
+    <button class="hourslabel" type="button" name="button"><h5>HOURS</h5></button>
+
+  </div>
+    <div class="formelement">
+      <button type="button" class="minus" ng-click="hoursMinus()">
+        <h5>-</h5>
+      </button>
+    </div>
+    <div class="formelement">
+      <button type="button" class="hours">
+        <h5>{{hours}}</h5>
+      </button>
+    </div>
+    <div class="formelement">
+      <button type="button" class="add" ng-click="hoursPlus()">
+        <h5>+</h5>
+      </button>
+    </div>
 
 
-      <div ng-repeat = "kid in kids">
-        <button class="flex1"><input type = "checkbox" name = "kids" value = "{{kid.id}}">{{kid.kid_name}}</button>
-      </div>
 
-      <button type="button" class="flex1">
+    <div class="formelement">
+      <button type="button" class="image">
         <h5><label for="file">IMAGE</label></h5>
       </button>
-      <input class="inputfile flex1" type="file" name="file" id="file" required/>
+    </div>
+
+      <input class="inputfile" type="file" name="file" id="file" required/>
+
 
       <input type = "hidden" name = "facebook_id" value="{{facebook_id}}"></input>
       <input type = "hidden" name = "author_pic" value="{{author_picture}}"></input>
       <input type = "hidden" name = "author" value="{{author_name}}"></input>
       <input type = "hidden" name = "hours" value="{{hours}}"></input>
 
-      <button class="flex1"type="submit"><h5>POST</h5></button>
+    <div class="formelement">
+      <button  type="submit" class="submit"><h5>POST</h5></button>
+    </div>
 
     </div>
   </form>
 </div>
 </div>
+ -->
 
 
-<div class="feedContainerProfile">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="feedContainerProfile" ng-hide="showfoot && showfooter">
 
   <div masonry >
       <div class="masonry-brick feedPost container" ng-repeat="post in posts">
@@ -187,8 +410,7 @@
             <p class="description">{{post.description}}</p>
         </div>
         <div class="bottom">
-        <p>{{post.location}}</p>
-        <p>{{post.time | amCalendar}}</p>
+        <p>{{post.location}} <span class="fl-r">{{post.time | amCalendar}}</span></p>
       </div>
       </div>
   </div>
