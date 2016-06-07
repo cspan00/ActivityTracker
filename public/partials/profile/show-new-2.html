@@ -8,13 +8,18 @@
       <div class="progress-container">
         <div class="progress-fill" ng-style="{width: user.total_hours +'%'}"></div>
       </div>
-      <div class="pro-kids" ng-repeat = "kid in kids">
-        <div class="kid-pic-cont">
-          <img class="pro-kid-pic" ng-src ="{{kid.kid_pic}}">
-          <h5>{{kid.kid_name}}</h5>
-          <h5> Hours: {{kid.total_hours}}</h5>
+
+      <div class="kidscont">
+
+        <div class="each-leader" ng-repeat="kid in kids" ng-hide="addform">
+          <img class = "leader-photo-pro" src="{{kid.kid_pic}}">
+          <a class="leader-name-pro"><h2>{{kid.kid_name}} </h2></a>
+          <h5 class="leader-hours leader-hours-profile">{{kid.total_hours}}hrs</h5>
         </div>
-      </div>
+
+    </div>
+
+
 
     </div>
     <!-- <div class="pro-kids" ng-repeat = "kid in kids">
