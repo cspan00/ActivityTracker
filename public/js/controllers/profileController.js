@@ -22,10 +22,15 @@ app.controller("profileController", function($scope, $http, posts, $location, $r
       $route.reload();
     })
   }
+$scope.addform = false;
+$scope.kid = {}
+$scope.kid.pic = "../img/avatars/angler.jpg"
+$scope.addformfunc = function(){
+  $scope.addform = !$scope.addform;
+}
 
-$scope.showKidForm = function(){
-  $scope.kidForm = !$scope.kidForm;
-  console.log("clickded");
+$scope.selectavatar = function(x){
+  $scope.kid.pic = x
 }
 
 $scope.hours = 1;

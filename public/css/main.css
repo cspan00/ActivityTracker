@@ -150,15 +150,26 @@ html {
   float: right; }
 
 .profileContainer {
-  height: 600px;
+  height: auto;
   width: 350px;
-  position: fixed;
-  padding: 22px; }
+  position: absolute;
+  overflow: scroll;
+  padding: 22px;
+  padding-bottom: 2em;
+  background-color: #E4E4E4; }
 
 .profile {
   height: 100%;
   width: 100%;
   background-color: white; }
+
+.showkidform {
+  bottom: 0;
+  left: 22px;
+  right: 22px;
+  position: absolute;
+  background-color: silver;
+  height: 3em; }
 
 .pro-top {
   width: 100%;
@@ -182,26 +193,6 @@ html {
 .progress-fill {
   height: 0.8em;
   background-color: #5B5B5B; }
-
-.pro-kids {
-  padding: 2em;
-  width: 100%;
-  display: flex;
-  background-color: white; }
-
-.pro-kid-pic {
-  border-radius: 50%;
-  height: 45px;
-  width: 45px;
-  object-fit: cover; }
-
-.kid-pic-cont {
-  background-color: skyblue; }
-
-.pro-form {
-  width: 100%;
-  height: 10%;
-  background-color: skyblue; }
 
 .newPostForm {
   margin-bottom: 128px;
@@ -275,8 +266,15 @@ html {
     width: 100%; }
   .profileContainer {
     width: 100%;
-    height: 300px;
-    position: static; } }
+    height: auto;
+    position: static; }
+  .showkidform {
+    margin-left: -22px;
+    padding-right: 22px;
+    width: 100%;
+    position: relative;
+    background-color: silver;
+    height: 3em; } }
 
 @media (max-width: 1000px) {
   .newPostForm {
@@ -312,7 +310,7 @@ html {
     width: 100%; }
   .profileContainer {
     width: 100%;
-    height: 300px;
+    height: auto;
     position: static;
     padding-left: 0;
     padding-right: 0; }
@@ -343,8 +341,19 @@ html {
   width: 100%;
   height: 3em;
   background-color: silver;
-  margin: auto;
-  margin-bottom: 5em; }
+  margin: auto; }
+
+.senditkid {
+  width: 85%;
+  height: 3em;
+  background-color: #43B581;
+  float: left; }
+
+.senditback {
+  width: 15%;
+  height: 3em;
+  background-color: #F04848;
+  float: left; }
 
 .formelement {
   height: 3em;
@@ -443,6 +452,13 @@ i, h5 {
 .ib {
   display: inline-block; }
 
+.addform img {
+  height: 75px;
+  width: 75px; }
+
+.addform input {
+  margin-bottom: 2em; }
+
 .leaderboard {
   padding: 22px; }
 
@@ -459,18 +475,40 @@ i, h5 {
     padding-left: 50px; }
     .each-leader .leader-name h1 {
       font-size: 2em; }
+  .each-leader .leader-name-pro {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 22px;
+    padding-right: 88px;
+    text-align: left; }
+    .each-leader .leader-name-pro h1 {
+      font-size: 2em; }
   .each-leader .leader-hours {
     display: table-cell;
     vertical-align: middle;
+    text-align: right;
     padding-left: 0px;
     padding-right: 22px; }
   .each-leader .leader-photo {
     height: 90px;
     width: 90px;
     object-fit: cover; }
+  .each-leader .leader-photo-pro {
+    height: 60px;
+    width: 60px;
+    object-fit: cover; }
+  .each-leader .leader-photo-pro-add {
+    height: 60px;
+    width: 60px;
+    color: #717171; }
 
 .leader-name:hover h1 {
   opacity: .7; }
+
+.kidscont {
+  width: 100%;
+  padding: 1em;
+  padding-bottom: 2em; }
 
 header {
   background-color: white; }
