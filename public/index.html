@@ -67,6 +67,7 @@
               <a ng-show="user.session" href="/#/leaderboard">Scoreboard</a>
               <a ng-show="user.session" href="/#/profile" >Profile</a>
               <a ng-click="setNavTab()" ng-style="{'color': color.about}" href="/#/about">About</a>
+              <a ng-show="user.session" href="http://www.avid4.com/policies/" >Privacy Policy</a>
               <a ng-show="user.session" href="/#/home" ng-click="logout()">Logout</a>
               <a ng-show="!user.session" ng-click = "authenticate('facebook')"><img src="img/facebook_blue.png" class = "fbIconHeader">Sign In</a>
 
@@ -82,7 +83,6 @@
       <a ng-show="!user.session" href="/#/home" >Home</a>
       <a ng-show="user.session" href="/#/feed">Feed</a>
       <a ng-click="setNavTab()" ng-style="{'color': color.about}" href="/#/about">About</a>
-      <a href="/#/contact">Contact</a>
       <a ng-show="!user.session" ng-click = "authenticate('facebook')"><img src = "img/facebook_blue.png" class = "fbIcon"> Sign In</a>
       <a ng-show="user.session" href="/#/home" ng-click="logout()">Logout</a>
       <a ng-show="user.session" href="/#/profile" >Profile</a>
