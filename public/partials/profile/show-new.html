@@ -20,14 +20,14 @@
   </div>
   <form ng-show="addform" class="addform" method="POST" action="/new/kid" >
 
-    <h3>Avatar</h3>
+    <h3>Choose An Avatar For This Player</h3>
     <img ng-class="{'tada': kid.pic == '../img/avatars/angler.jpg'}" ng-click="selectavatar('../img/avatars/angler.jpg')" class = "leader-photo-pro animated infinite" src="../../img/avatars/angler.jpg">
     <img ng-class="{'tada': kid.pic == '../img/avatars/climbing.jpg'}" ng-click="selectavatar('../img/avatars/climbing.jpg')" class = "leader-photo-pro animated infinite" src="../../img/avatars/climbing.jpg">
     <img ng-class="{'tada': kid.pic == '../img/avatars/kayaking.jpg'}" ng-click="selectavatar('../img/avatars/kayaking.jpg')" class = "leader-photo-pro animated infinite" src="../../img/avatars/kayaking.jpg">
     <img ng-class="{'tada': kid.pic == '../img/avatars/LNT.jpg'}" ng-click="selectavatar('../img/avatars/LNT.jpg')" class = "leader-photo-pro animated infinite" src="../../img/avatars/LNT.jpg">
     <img ng-class="{'tada': kid.pic == '../img/avatars/mtnbiker.jpg'}" ng-click="selectavatar('../img/avatars/mtnbiker.jpg')" class = "leader-photo-pro animated infinite" src="../../img/avatars/mtnbiker.jpg">
     <img ng-class="{'tada': kid.pic == '../img/avatars/SUP.jpg'}" ng-click="selectavatar('../img/avatars/SUP.jpg')" class = "leader-photo-pro animated infinite" src="../../img/avatars/SUP.jpg">
-    <h3>Alias</h3>
+    <h3>Create An Alias For Child ex: iluvbiking</h3>
     <input type="text" name="kid_name" value="" placeholder="Enter An Alias" style="text-align:center;" required="true">
     <input type="hidden" name="kid_pic" ng-value="kid.pic">
     <input type = "hidden" name = "total_hours" value = 0>
@@ -40,7 +40,7 @@
 
 
   <div class="showkidform" ng-hide="addform">
-    <button class="sendit" ng-click="addformfunc()"><h3><i class="material-icons">add</i> Add Kid</h3></button>
+    <button class="sendit" ng-click="addformfunc()"><h3><i class="material-icons">add</i> Add Child</h3></button>
   </div>
     <!-- <h3> Add Kids!</h3>
       <form method = "POST" action = "/new/kid">
@@ -406,12 +406,15 @@
           <img src="{{post.picture_url}}" style='height: 100%; width: 100%; object-fit: cover' />
         </div>
         <div class="post-content">
-            <p class="points"><img class="pointsicon"src="../../img/logo.png"/>{{post.hours}}</p>
+            <a class="author" href = "/#/user/{{post.facebook_id}}">{{post.author}}</a>
+            <p class="points"><img class="pointsicon"src="../../img/logo.png"/></p>
             <h1 class="title">{{post.title}}</h1>
             <p class="description">{{post.description}}</p>
         </div>
         <div class="bottom">
-        <p>{{post.location}} <span class="fl-r">{{post.time | amCalendar}}</span></p>
+          <p class="points"><img class="pointsicon"src="../../img/logo.png"/>{{post.hours}} hours outside</p>
+        <p> {{post.location}}</p>
+        <p class="edit"><a href='/#/feed' ng-click = "deletePost()" ng-show="post.facebook_id == user" >Delete</a></p>
       </div>
       </div>
   </div>

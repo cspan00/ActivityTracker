@@ -66,14 +66,15 @@
           <img src="{{post.picture_url}}" style='height: 100%; width: 100%; object-fit: cover' />
         </div>
         <div class="post-content">
-            <p class="points"><img class="pointsicon"src="../../img/logo.png"/>{{post.hours}}</p>
+            <a class="author" href = "/#/user/{{post.facebook_id}}">{{post.author}}</a>
+            <p class="points"><img class="pointsicon"src="../../img/logo.png"/></p>
             <h1 class="title">{{post.title}}</h1>
             <p class="description">{{post.description}}</p>
         </div>
         <div class="bottom">
-        <p> {{post.location}} <span class="fl-r">{{post.time | amCalendar}}</span></p>
+          <p class="points"><img class="pointsicon"src="../../img/logo.png"/>{{post.hours}} hours outside</p>
+        <p> {{post.location}}</p>
       </div>
       </div>
   </div>
-
 </div>
