@@ -6,12 +6,12 @@
     <div class="form-title">
       <h1>
         <p ng-model="showfoot" class='form-control titleInput' type="text" name="title" ng-model="title" >What'd You Do Outside Today?</p>
-        <input ng-model="showfoot" class='form-control titleInput' type="text" name="title" ng-model="title" required placeholder="Enter a title" >
+        <input ng-model="showfoot" class='form-control titleInput' type="text" name="title" ng-model="title" required placeholder="Enter a title *" >
       </h1>
 
     </div>
     <div class="form-body">
-      <textarea ng-model="showfooter" rows='4' class='form-control' type="text" name="description" ng-model="description" placeholder = "Tell us some more..." required></textarea>
+      <textarea ng-model="showfooter" rows='4' class='form-control' type="text" name="description" ng-model="description" placeholder = "Tell us some more... *" required></textarea>
     </div>
         <div class="form-footer" ng-show="showfoot && showfooter">
 
