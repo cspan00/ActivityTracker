@@ -20,7 +20,7 @@
         <button class="location"type="button" name="button"><h5><i class="material-icons">location_on</i></h5></button>
       </div>
       <div class="formelement">
-        <input class='form-control cityInput city' type="text" name="city" placeholder="Denver" ng-model="location" required>
+        <input class='form-control cityInput city' type="text" name="city" placeholder="City" ng-model="location" required>
       </div>
     <div class="formelement">
 
@@ -155,7 +155,7 @@
 <div class="feedContainer" ng-hide="showfoot && showfooter">
 
   <div masonry >
-      <div class="masonry-brick feedPost container" ng-repeat="post in posts | orderBy: '-id'">
+      <div class="masonry-brick feedPost container" ng-repeat="post in posts | orderObjectBy:'id':true">
 
         <div class="post-img">
           <img src="{{post.picture_url}}" style='height: 100%; width: 100%; object-fit: cover' />

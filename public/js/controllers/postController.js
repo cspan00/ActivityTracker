@@ -39,6 +39,7 @@ $scope.hoursMinus = function(){
 
 
   posts.getPosts().then(function(response){
+    console.log(typeof response);
     $scope.posts = response;
     $scope.time = response[0].created_at;
   })
