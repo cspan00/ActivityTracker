@@ -36,6 +36,10 @@ $scope.hoursMinus = function(){
 }
 
 
+$scope.showCheck = function (){
+  $scope.photoSelected = !$scope.photoSelected;
+}
+
 
 
   posts.getPosts().then(function(response){
@@ -62,19 +66,8 @@ $scope.hoursMinus = function(){
     })
   }
 
-  $scope.addComment = function(){
-    var post_id = this.post.id
-    var post_comment = this.comment
-    posts.getUserData().then(function(user){
-    var comment = {}
-    comment.comment = post_comment
-    comment.facebook_id = user.facebook_id
-    comment.post_id = post_id
-    $http.post('post/'+post_id+'/comments', comment).then(function(response){
-      })
-    $route.reload();
-  })
-}
+
+
 
 
   //checks to see if logged in user has is_admin set to true or false, the sets isAdmin to that value
