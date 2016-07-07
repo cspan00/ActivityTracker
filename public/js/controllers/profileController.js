@@ -10,8 +10,12 @@ app.controller("profileController", function($scope, $http, posts, $location, $r
         console.log($scope.posts);
     })
     posts.getKidsByFBId(result.facebook_id).then(function(result){
-      console.log(result);
+      if(!result.length){
+        $scope.message = "You haven't added any kids yet - click below to add!"
+      }
+      else{
       $scope.kids = result
+     }
     })
 
 
