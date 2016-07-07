@@ -129,12 +129,13 @@
       </button>
     </div>
     <div class="formelement">
-      <button type="button" class="imageup">
-        <h5><label for="file">Choose Photo</label></h5>
-      </button>
-    </div>
+        <button type="button" class="imageup">
+        <h5><label for="file" ng-click = "showCheck()">Choose Photo</label></h5>
+        </button>
+        <i class="material-icons" ng-show = "photoSelected">check</i>
+        </div>
 
-      <input class="inputfile" type="file" name="file" id="file" required/>
+        <input class="inputfile" type="file" name="file" id="file" required/>
 
 
       <input type = "hidden" name = "facebook_id" value="{{facebook_id}}"></input>

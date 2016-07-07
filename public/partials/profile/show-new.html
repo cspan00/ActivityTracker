@@ -216,19 +216,20 @@
   <br>
 
 <hr>
-    <div class="formelement">
-      <button type="button" class="image">
-        <h5>
-        <i class="material-icons">camera_alt</i></label></h5>
-      </button>
-    </div>
-    <div class="formelement">
-      <button type="button" class="imageup">
-        <h5><label for="file">Choose Photo</label></h5>
-      </button>
+<div class="formelement">
+  <button type="button" class="image">
+    <h5>
+    <i class="material-icons">camera_alt</i></label></h5>
+  </button>
+</div>
+<div class="formelement">
+    <button type="button" class="imageup">
+    <h5><label for="file" ng-click = "showCheck()">Choose Photo</label></h5>
+    </button>
+    <i class="material-icons" ng-show = "photoSelected">check</i>
     </div>
 
-      <input class="inputfile" type="file" name="file" id="file" required/>
+    <input class="inputfile" type="file" name="file" id="file" required/>
 
 
       <input type = "hidden" name = "facebook_id" value="{{facebook_id}}"></input>

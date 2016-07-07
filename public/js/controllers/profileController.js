@@ -53,6 +53,12 @@ $scope.hoursMinus = function(){
 }
 
 
+$scope.showCheck = function (){
+$scope.photoSelected = !$scope.photoSelected;
+}
+
+
+
 
 
 
