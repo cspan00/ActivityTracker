@@ -55,6 +55,10 @@ $scope.hoursMinus = function(){
 
   })
 
+  $scope.showCheck = function (){
+  $scope.photoSelected = !$scope.photoSelected;
+}
+
   $scope.deletePost = function(){
     return $http.get('post/'+this.post.id+'/delete').then(function(response){
       $route.reload();
