@@ -305,7 +305,8 @@ html {
     padding-right: 0; }
   .newPostFormProfile {
     width: 100%;
-    height: 291px; }
+    height: 291px;
+    overflow: scroll; }
   .feedContainerProfile {
     width: 100%; }
   .profileContainer {
