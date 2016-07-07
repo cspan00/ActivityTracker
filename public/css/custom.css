@@ -54,3 +54,10 @@
   height: 20px;
   margin-right: 5px;
 }
+
+.kidLabel{
+  margin-left: 10px;
+  font-family: 'BrandonGrotesque-Medium', Fallback, sans-serif;
+  color: #717171;
+  letter-spacing: 0.05em;
+}
