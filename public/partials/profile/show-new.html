@@ -253,7 +253,7 @@
 <div class="feedContainerProfile" ng-hide="showfoot && showfooter">
 
   <div masonry >
-      <div class="masonry-brick feedPost container" ng-repeat="post in posts">
+      <div class="masonry-brick feedPost container" ng-repeat="post in posts | orderBy: '-id'">
 
         <div class="post-img">
           <img src="{{post.picture_url}}" style='height: 100%; width: 100%; object-fit: cover' />

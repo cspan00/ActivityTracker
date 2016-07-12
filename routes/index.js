@@ -111,7 +111,6 @@ router.get('/user/:id', function(req, res, next){
 
 //Adding posts
 router.post('/new/post', upload.single('file'), function(req, res, next){
-  console.log(req.body);
   cloudinary.uploader.upload(req.file.filename, function(result) {
   var post ={}
   post.facebook_id = req.body.facebook_id
