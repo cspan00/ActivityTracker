@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -83,6 +82,8 @@ header {
   height: 2em;
   width: auto; }
 
+.nav {
+  float: right; }
 
 .mobilefooter {
   display: none; }
@@ -244,7 +245,6 @@ html {
 .edit {
   float: right; }
 
-
 @media (max-width: 1250px) {
   .newPostForm {
     margin-bottom: 128px;
@@ -305,8 +305,7 @@ html {
     padding-right: 0; }
   .newPostFormProfile {
     width: 100%;
-    height: 291px;
-    overflow: scroll; }
+    height: 291px; }
   .feedContainerProfile {
     width: 100%; }
   .profileContainer {
@@ -314,8 +313,7 @@ html {
     height: auto;
     position: static;
     padding-left: 0;
-    padding-right: 0; }
-  } }
+    padding-right: 0; } }
 
 .form-title {
   padding-left: 1em;
@@ -473,7 +471,7 @@ i, h5 {
     display: table-cell;
     vertical-align: middle;
     width: 2000px;
-    padding-left: 50px; }
+    padding-left: 30px; }
     .each-leader .leader-name h1 {
       font-size: 2em; }
   .each-leader .leader-name-pro {
@@ -488,8 +486,9 @@ i, h5 {
     display: table-cell;
     vertical-align: middle;
     text-align: right;
-    padding-left: 0px;
-    padding-right: 22px; }
+    padding-left: 10px;
+    padding-right: 22px;
+    color: #61AB7A; }
   .each-leader .leader-photo {
     height: 90px;
     width: 90px;

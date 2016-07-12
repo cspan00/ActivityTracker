@@ -84,14 +84,11 @@ router.post('/auth/facebook', function(req,res){
       })
     });
 })
-
 //Gets and and allows us to display all posts
 router.get('/posts', function(req,res,next){
   Posts().select().then(function(response){
     res.send(response)
-
   })
-
 })
 //Verify User Logged in: getting user information
 router.post('/user', function(req, res){
@@ -100,15 +97,12 @@ router.post('/user', function(req, res){
   Users().where('facebook_id', user.facebook_id).first().then(function(result){
     res.send(result)
   })
-
 })
-
 router.get('/user/:id', function(req, res, next){
   Users().where('facebook_id', req.params.id).first().then(function(response){
     res.send(response)
   })
 })
-
 //Adding posts
 router.post('/new/post', upload.single('file'), function(req, res, next){
   cloudinary.uploader.upload(req.file.filename, function(result) {
@@ -123,9 +117,6 @@ router.post('/new/post', upload.single('file'), function(req, res, next){
   post.hours = req.body.hours
   post.time = new Date();
   post.location = req.body.city + ", " + req.body.state
-
-
-
   //update total number of hours for user when they make a post
   //does math to calculate total hours for user.
   Users().where('facebook_id', req.body.facebook_id).first().then(function(result){
@@ -157,23 +148,18 @@ router.post('/new/post', upload.single('file'), function(req, res, next){
         })
     })
   }
-
   Posts().insert(post).then(function(result){
       res.redirect('/#/feed')
     })
     fs.unlink('./'+req.file.filename)
  })
 })
-
 //Show posts on the profile for user you have selected.
 router.post('/getposts', function(req, res, next){
   Posts().where('facebook_id', req.body.facebook_id).then(function(response){
     res.send(response)
     })
   })
-
-
-
 router.post('/post/edit', function (req, res, next) {
   Posts().where("id", req.body.postId).update({
     title: req.body.title,
@@ -182,37 +168,33 @@ router.post('/post/edit', function (req, res, next) {
   }).then(function (response) {
     res.redirect('/#/feed')
   })
-
 })
-
 router.get('/post/:id', function(req, res, next){
   Posts().where('id', req.params.id).first().then(function(response){
     res.send(response);
     })
 })
-
-
-
 // Deletes post and subtracts hours from users total score
 router.get('/post/:id/delete', function (req, res, next) {
   var hours;
-  var post_id
+  var post_id;
   Posts().where('id', req.params.id).first().then(function (response) {
+      console.log("%%%%%%%%%%%%%%%%RESPONSE");
+      console.log(response);
       var hours = response.hours;
       var post_id = response.id;
     Users().where('facebook_id', response.facebook_id).first().then(function(response){
         var total_hours = response.total_hours;
         var new_hours = parseFloat(total_hours) - parseFloat(hours);
           Users().where('facebook_id', response.facebook_id).update('total_hours', new_hours).then(function(result){
-            res.send(200)
+            res.sendStatus(200)
               Posts().where('id', post_id).first().del().then(function(response){
-                res.send(200)
+                res.sendStatus(200)
               })
           })
     })
   })
 })
-
 router.post('/new/kid', upload.single('file'), function (req, res, next){
     var kid = {};
     kid.kid_pic = req.body.kid_pic;
