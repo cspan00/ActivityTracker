@@ -144,7 +144,8 @@ html {
 .newPostFormProfile {
   width: 95%;
   height: 291px;
-  background-color: white; }
+  background-color: white;
+  overflow: scroll;}
 
 .feedContainerProfile {
   width: 70%;
@@ -486,7 +487,7 @@ i, h5 {
     display: table-cell;
     vertical-align: middle;
     text-align: right;
-    padding-left: 10px;
+    padding-left: 0px;
     padding-right: 22px;
     color: #61AB7A; }
   .each-leader .leader-photo {
