@@ -11,7 +11,7 @@
     display: table-cell;
     vertical-align: middle;
     width: 2000px;
-    padding-left: 50px; }
+    padding-left: 30px; }
     .each-leader .leader-name h1 {
       font-size: 2em; }
   .each-leader .leader-name-pro {
@@ -27,7 +27,8 @@
     vertical-align: middle;
     text-align: right;
     padding-left: 0px;
-    padding-right: 22px; }
+    padding-right: 22px;
+    color: #61AB7A; }
   .each-leader .leader-photo {
     height: 90px;
     width: 90px;
