@@ -100,7 +100,7 @@
     <form method="POST" action="/new/post" enctype="multipart/form-data">
     <div class="form-title">
       <h1>
-        <p ng-model="showfoot" class='form-control titleInput' type="text" name="title" ng-model="title" >Todays Outdoor Adventure?</p>
+        <p ng-model="showfoot" class='form-control titleInput' type="text" name="title" ng-model="title" >Today's Outdoor Adventure?</p>
         <input ng-model="showfoot" class='form-control titleInput' type="text" name="title" ng-model="title" required placeholder="Enter A Title *" >
       </h1>
 
@@ -121,12 +121,13 @@
 
 
       <select class="form-control stateSelect state" name="state">
+        <option value = "" selected = "true">State</option>
         <option value="AL">AL</option>
         <option value="AK">AK</option>
         <option value="AZ">AZ</option>
         <option value="AR">AR</option>
         <option value="CA">CA</option>
-        <option value="CO" selected="true">CO</option>
+        <option value="CO">CO</option>
         <option value="CT">CT</option>
         <option value="DE">DE</option>
         <option value="DC">DC</option>
